@@ -14,7 +14,9 @@ const GameDataProvider = ({ children }) => {
   const [playerTurn, setPlayerTurn] = useState(1);
 
   return (
-    <gameContext.Provider value={{ gameBoard }}>
+    <gameContext.Provider
+      value={{ gameBoard, playerTurn, setGameBoard, setPlayerTurn }}
+    >
       {children}
     </gameContext.Provider>
   );
