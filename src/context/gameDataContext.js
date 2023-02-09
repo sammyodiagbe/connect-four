@@ -1,9 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const gameContext = useContext();
 
 const GameDataProvider = ({ children }) => {
-  return <gameContext.Provider value={{}}>{children}</gameContext.Provider>;
+  const [gameBoard, setGameBoard] = useState([
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+  ]);
+  const [playerTurn, setPlayerTurn] = useState(1);
+
+  return (
+    <gameContext.Provider value={{ gameBoard }}>
+      {children}
+    </gameContext.Provider>
+  );
 };
 
 export default GameDataProvider;
