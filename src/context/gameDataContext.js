@@ -12,6 +12,7 @@ const GameDataProvider = ({ children }) => {
     [0, 0, 0, 0, 0, 0, 0],
   ]);
   const [playerTurn, setPlayerTurn] = useState(1);
+  const [screenSize, setScreenSize] = useState();
 
   return (
     <gameContext.Provider
