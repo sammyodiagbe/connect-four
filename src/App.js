@@ -1,5 +1,11 @@
+import GameDataProvider from "./context/gameDataContext";
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <GameDataProvider>
+      <div className="App"></div>
+    </GameDataProvider>
+  );
 }
 
 export default App;
