@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  font-size: 16px;
+}
+
+div.connect-four {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #7945FF;
+}
+
+div.connect-four div.game-screen div.board {
+  width: 632px;
+  height: 584px;
+  position: relative;
+}
+
+div.connect-four div.game-screen div.board div.board-back {
+  background: url(../assets/board-layer-white-large.svg), url(../assets/board-layer-black-large.svg) no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+div.connect-four div.game-screen div.board div.board-top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+/*# sourceMappingURL=index.css.map */

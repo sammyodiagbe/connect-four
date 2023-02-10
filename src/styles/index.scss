@@ -9,3 +9,43 @@
  body, html {
     font-size: 16px;
  }
+
+ div.connect-four {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #7945FF;
+    div.game-screen {
+        div.board {
+            width: 632px;
+            height: 584px;
+            position: relative;
+
+            div.board-back {
+                background:url(../assets/board-layer-white-large.svg) ,url(../assets/board-layer-black-large.svg)  no-repeat;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 2;
+            }
+            div.board-top {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                div.board-row {
+                    &:hover {
+                        background: rgba(0,0,0,.4);
+                    }
+                }
+            }
+        }
+    }
+ }

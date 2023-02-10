@@ -14,7 +14,6 @@ const GameScreen = () => {
           <div className="board-row"></div>
           <div className="board-row"></div>
           <div className="board-row"></div>
-          <div className="board-row"></div>
         </div>
       </div>
     </div>

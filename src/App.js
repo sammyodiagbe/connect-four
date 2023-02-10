@@ -1,4 +1,5 @@
 import GameDataProvider from "./context/gameDataContext";
+import GameScreen from "./screens/game";
 
 function App() {
   return (
