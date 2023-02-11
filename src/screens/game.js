@@ -9,13 +9,17 @@ const GameScreen = () => {
 
   const numberOfCols = 6;
 
-  console.log(gameBoard[5][0]);
+  const playToColumn = (event) => {
+    let { x } = event.target.dataset;
+    x = parseInt(x);
+    console.log(x);
+  };
 
   return (
     <div className="game-screen">
       <div className="board">
         <div className="board-top">
-          <div className="board-row" data-x="0">
+          <div className="board-row" data-x="0" onClick={playToColumn}>
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][0]} />
             </div>
@@ -156,7 +160,15 @@ const GameScreen = () => {
             </div>
           </div>
         </div>
-        <div className="board-back"></div>
+        <div className="board-back">
+          <button className="button" data-x={0} onClick={playToColumn}></button>
+          <button className="button" data-x={1} onClick={playToColumn}></button>
+          <button className="button" data-x={2} onClick={playToColumn}></button>
+          <button className="button" data-x={3} onClick={playToColumn}></button>
+          <button className="button" data-x={4} onClick={playToColumn}></button>
+          <button className="button" data-x={5} onClick={playToColumn}></button>
+          <button className="button" data-x={6} onClick={playToColumn}></button>
+        </div>
       </div>
     </div>
   );
