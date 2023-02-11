@@ -44,8 +44,8 @@ div.connect-four div.game-screen div.board div.board-back {
       grid-template-columns: repeat(7, 1fr);
 }
 
-div.connect-four div.game-screen div.board div.board-back button.button:hover {
-  opacity: .4;
+div.connect-four div.game-screen div.board div.board-back button.button {
+  background: transparent;
 }
 
 div.connect-four div.game-screen div.board div.board-top {

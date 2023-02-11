@@ -4,7 +4,7 @@ import { gameContext } from "../context/gameDataContext";
 
 const GameScreen = () => {
   const dataContext = useContext(gameContext);
-  const { gameBoard } = dataContext;
+  const { gameBoard, play } = dataContext;
   const numberOfRows = 7;
 
   const numberOfCols = 6;
@@ -12,7 +12,7 @@ const GameScreen = () => {
   const playToColumn = (event) => {
     let { x } = event.target.dataset;
     x = parseInt(x);
-    console.log(x);
+    play(x);
   };
 
   return (

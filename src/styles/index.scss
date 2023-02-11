@@ -34,9 +34,7 @@
                 display: grid;
                 grid-template-columns: repeat(7, 1fr);
                 button.button {
-                    &:hover {
-                        opacity: .4;
-                    }
+                    background: transparent;
                 }
             }
             div.board-top {
