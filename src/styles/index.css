@@ -37,7 +37,6 @@ div.connect-four div.game-screen div.board div.board-back {
   width: 100%;
   position: absolute;
   top: 0;
-  z-index: 2;
 }
 
 div.connect-four div.game-screen div.board div.board-top {
@@ -47,9 +46,77 @@ div.connect-four div.game-screen div.board div.board-top {
       grid-template-columns: repeat(7, 1fr);
   height: 100%;
   position: absolute;
+  padding: 0 7px;
+  padding-bottom: 49px;
+  padding-top: 15px;
   top: 0;
   left: 0;
   width: 100%;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "item-6" "item-5" "item-4" "item-3" "item-2" "item-1";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  padding: 5px 0;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.r {
+  background: red;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.y {
+  background: yellow;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-1 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: item-1;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-2 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: item-2;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-3 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: item-3;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-4 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: item-4;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: item-5;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-6 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: item-6;
 }
 
 div.connect-four div.game-screen div.board div.board-top div.board-row:hover {

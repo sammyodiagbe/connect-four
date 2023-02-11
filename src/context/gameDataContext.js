@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const gameContext = createContext();
+export const gameContext = createContext();
 
 const GameDataProvider = ({ children }) => {
   const [gameBoard, setGameBoard] = useState([
