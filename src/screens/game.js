@@ -15,7 +15,7 @@ const GameScreen = () => {
     <div className="game-screen">
       <div className="board">
         <div className="board-top">
-          <div className="board-row">
+          <div className="board-row" data-x="0">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][0]} />
             </div>
@@ -35,7 +35,7 @@ const GameScreen = () => {
               <Seed entry={gameBoard[0][0]} />
             </div>
           </div>
-          <div className="board-row">
+          <div className="board-row" data-x="1">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][1]} />
             </div>
@@ -55,7 +55,7 @@ const GameScreen = () => {
               <Seed entry={gameBoard[0][1]} />
             </div>
           </div>
-          <div className="board-row">
+          <div className="board-row" data-x="2">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][2]} />
             </div>
@@ -75,7 +75,7 @@ const GameScreen = () => {
               <Seed entry={gameBoard[0][2]} />
             </div>
           </div>
-          <div className="board-row">
+          <div className="board-row" data-x="3">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][3]} />
             </div>
@@ -95,7 +95,7 @@ const GameScreen = () => {
               <Seed entry={gameBoard[0][3]} />
             </div>
           </div>
-          <div className="board-row">
+          <div className="board-row" data-x="4">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][4]} />
             </div>
@@ -115,7 +115,7 @@ const GameScreen = () => {
               <Seed entry={gameBoard[0][4]} />
             </div>
           </div>
-          <div className="board-row">
+          <div className="board-row" data-x="5">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][5]} />
             </div>
@@ -135,7 +135,7 @@ const GameScreen = () => {
               <Seed entry={gameBoard[0][5]} />
             </div>
           </div>
-          <div className="board-row">
+          <div className="board-row" data-x="6">
             <div className="disc r item-1">
               <Seed entry={gameBoard[5][6]} />
             </div>

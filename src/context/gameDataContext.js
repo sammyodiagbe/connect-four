@@ -9,7 +9,7 @@ const GameDataProvider = ({ children }) => {
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
-    [2, 0, 0, 0, 0, 0, 0],
+    [2, 0, 0, 2, 0, 0, 1],
   ]);
   const [playerTurn, setPlayerTurn] = useState(1);
   const [screenSize, setScreenSize] = useState();
