@@ -45,6 +45,7 @@
                 width: 100%;
                 div.board-row {
                     display: grid;
+                    position: relative;
                     // background: rgba(0,0,0,.5);
                     grid-template-areas: 
                     "item-6"
@@ -63,6 +64,14 @@
                         width: 70px;
                         border-radius: 60px;
                         
+                        div.seed {
+                            transform: translateY(-1000px);
+                            position: relative;
+                            animation-name: slidein;
+                            animation-delay: .5s;
+                            animation-duration: 1s;
+                            animation-fill-mode: forwards;
+                        }
 
                         &.item-1 {
                             grid-area: item-1;
@@ -92,5 +101,14 @@
                 }
             }
         }
+    }
+ }
+
+ @keyframes slidein {
+    0% {
+        transform: translateY(-1000px);
+    }
+    100% {
+        transform: translateY(0);
     }
  }

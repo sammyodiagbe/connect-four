@@ -57,6 +57,7 @@ div.connect-four div.game-screen div.board div.board-top {
 div.connect-four div.game-screen div.board div.board-top div.board-row {
   display: -ms-grid;
   display: grid;
+  position: relative;
       grid-template-areas: "item-6" "item-5" "item-4" "item-3" "item-2" "item-1";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -73,6 +74,20 @@ div.connect-four div.game-screen div.board div.board-top div.board-row div.disc 
   height: 75px;
   width: 70px;
   border-radius: 60px;
+}
+
+div.connect-four div.game-screen div.board div.board-top div.board-row div.disc div.seed {
+  -webkit-transform: translateY(-1000px);
+          transform: translateY(-1000px);
+  position: relative;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-1 {
@@ -113,5 +128,27 @@ div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.
 
 div.connect-four div.game-screen div.board div.board-top div.board-row:hover {
   background: rgba(0, 0, 0, 0.4);
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slidein {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=index.css.map */

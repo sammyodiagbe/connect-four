@@ -4,12 +4,12 @@ export const gameContext = createContext();
 
 const GameDataProvider = ({ children }) => {
   const [gameBoard, setGameBoard] = useState([
-    [1, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0],
-    [1, 2, 0, 0, 0, 0, 0],
-    [2, 2, 0, 0, 0, 0, 0],
-    [1, 2, 0, 0, 0, 0, 0],
-    [2, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [2, 0, 0, 0, 0, 0, 0],
   ]);
   const [playerTurn, setPlayerTurn] = useState(1);
   const [screenSize, setScreenSize] = useState();
