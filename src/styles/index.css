@@ -48,7 +48,7 @@ div.connect-four div.game-screen div.board div.board-top {
   position: absolute;
   padding: 0 7px;
   padding-bottom: 49px;
-  padding-top: 15px;
+  padding-top: 10px;
   top: 0;
   left: 0;
   width: 100%;
@@ -70,17 +70,9 @@ div.connect-four div.game-screen div.board div.board-top div.board-row {
 }
 
 div.connect-four div.game-screen div.board div.board-top div.board-row div.disc {
-  height: 60px;
-  width: 60px;
+  height: 75px;
+  width: 70px;
   border-radius: 60px;
-}
-
-div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.r {
-  background: red;
-}
-
-div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.y {
-  background: yellow;
 }
 
 div.connect-four div.game-screen div.board div.board-top div.board-row div.disc.item-1 {
