@@ -37,6 +37,34 @@ const GameDataProvider = ({ children }) => {
     // check to see if game is over
   };
 
+  const checkWinner = (y, x) => {
+    // horizontal right and left
+    const horizontalRight = [
+      gameBoard[y][x + 1] || -1,
+      gameBoard[x + 2] || -1,
+      gameBoard[y][x + 3] || -1,
+    ];
+    const horizontalLeft = [
+      gameBoard[y][x - 1] || -1,
+      gameBoard[y][x - 2] || -1,
+      gameBoard[y][x - 3] || -1,
+    ];
+
+    // vertical top and bottom
+    const verticalTop = [
+      gameBoard[y - 1][x] || -1,
+      gameBoard[y - 2][x] || -1,
+      gameBoard[y - 3][x] || -1,
+    ];
+    const verticalBottom = [
+      gameBoard[y + 1][x] || -1,
+      gameBoard[y + 2][x] || -1,
+      gameBoard[y + 3][x] || -1,
+    ];
+
+    // diagonals
+  };
+
   return (
     <gameContext.Provider
       value={{ gameBoard, playerTurn, setGameBoard, setPlayerTurn, play }}
