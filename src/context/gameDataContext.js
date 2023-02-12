@@ -68,33 +68,34 @@ const GameDataProvider = ({ children }) => {
     // diagonals
 
     const diagonalUpRight = [
-      validValue(y - 1, x + 1),
-      validValue(y - 1, x + 2),
-      validValue(y - 1, x + 3),
-    ];
-    const diagonalUpLeft = [
-      validValue(y - 1, x - 1),
-      validValue(y - 1, x - 2),
-      validValue(y - 1, x - 3),
-    ];
-    const diagonalDownRight = [
       validValue(y + 1, x + 1),
       validValue(y + 1, x + 2),
       validValue(y + 1, x + 3),
     ];
-    const diagonalDownLeft = [
+    const diagonalUpLeft = [
       validValue(y + 1, x - 1),
       validValue(y + 1, x - 2),
       validValue(y + 1, x - 3),
     ];
+    const diagonalDownRight = [
+      validValue(y - 1, x + 1),
+      validValue(y - 2, x + 2),
+      validValue(y - 3, x + 3),
+    ];
+    const diagonalDownLeft = [
+      validValue(y - 1, x - 1),
+      validValue(y - 2, x - 2),
+      validValue(y - 3, x - 3),
+    ];
 
     const checkValue = (y, x, arr) => {
       const value = gameBoard[y][x];
-      return (
-        arr.reduce((a, b) => a + b) + value === 8 ||
-        arr.reduce((a, b) => a + b) + value === 4
-      );
+      const addedValue = value + arr.reduce((a, b) => a + b);
+      return [4, 8].includes(addedValue);
     };
+
+    console.log(diagonalDownLeft);
+    console.log(diagonalDownRight);
 
     const win =
       checkValue(y, x, horizontalLeft) ||
