@@ -110,18 +110,22 @@ const GameDataProvider = ({ children }) => {
   };
 
   const validValue = (y, x) => {
-    const board = [...gameBoard];
-    const entry = board[y][x];
     try {
+      const board = [...gameBoard];
+      const entry =
+        board[y] != undefined
+          ? board[y][x] != undefined
+            ? board[y][x]
+            : -1
+          : -1;
       if (entry === undefined || entry === null) {
         console.log("entry is undefined");
         return -1;
       }
+      return entry;
     } catch (err) {
       console.log(err);
     }
-
-    return entry;
   };
 
   return (
