@@ -63,6 +63,27 @@ const GameDataProvider = ({ children }) => {
     ];
 
     // diagonals
+
+    const diagonalUpRight = [
+      gameBoard[y - 1][x + 1] || -1,
+      gameBoard[y - 1][x + 2] || -1,
+      gameBoard[y - 1][x + 3] || -1,
+    ];
+    const diagonalUpLeft = [
+      gameBoard[y - 1][x - 1] || -1,
+      gameBoard[y - 1][x - 2] || -1,
+      gameBoard[y - 1][x - 3] || -1,
+    ];
+    const diagonalDownRight = [
+      gameBoard[y + 1][x + 1] || -1,
+      gameBoard[y + 1][x + 2] || -1,
+      gameBoard[y + 1][x + 3] || -1,
+    ];
+    const diagonalDownLeft = [
+      gameBoard[y + 1][x - 1] || -1,
+      gameBoard[y + 1][x - 2] || -1,
+      gameBoard[y + 1][x - 3] || -1,
+    ];
   };
 
   return (
