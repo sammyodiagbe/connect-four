@@ -9,7 +9,7 @@ const GameDataProvider = ({ children }) => {
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
-    [2, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
   ]);
   const [playerTurn, setPlayerTurn] = useState(1);
   const [screenSize, setScreenSize] = useState();
@@ -29,61 +29,96 @@ const GameDataProvider = ({ children }) => {
           setPlayerTurn(1);
         }
         setGameBoard(newBoard);
+        checkWinner(y, x);
         return;
       }
       y -= 1;
     }
-    console.log(gameBoard);
+
     // check to see if game is over
   };
 
   const checkWinner = (y, x) => {
     // horizontal right and left
+    console.log(y, "   -  ", x);
     const horizontalRight = [
-      gameBoard[y][x + 1] || -1,
-      gameBoard[x + 2] || -1,
-      gameBoard[y][x + 3] || -1,
+      validValue(gameBoard[y][x + 1]),
+      validValue(gameBoard[y][x + 2]),
+      validValue(gameBoard[y][x + 3]),
     ];
     const horizontalLeft = [
-      gameBoard[y][x - 1] || -1,
-      gameBoard[y][x - 2] || -1,
-      gameBoard[y][x - 3] || -1,
+      validValue(gameBoard[y][x - 1]),
+      validValue(gameBoard[y][x - 2]),
+      validValue(gameBoard[y][x - 3]),
     ];
 
     // vertical top and bottom
     const verticalTop = [
-      gameBoard[y - 1][x] || -1,
-      gameBoard[y - 2][x] || -1,
-      gameBoard[y - 3][x] || -1,
+      validValue(gameBoard[y - 1][x]),
+      validValue(gameBoard[y - 2][x]),
+      validValue(gameBoard[y - 3][x]),
     ];
     const verticalBottom = [
-      gameBoard[y + 1][x] || -1,
-      gameBoard[y + 2][x] || -1,
-      gameBoard[y + 3][x] || -1,
+      validValue(gameBoard[y + 1][x]),
+      validValue(gameBoard[y + 2][x]),
+      validValue(gameBoard[y + 3][x]),
     ];
 
     // diagonals
 
     const diagonalUpRight = [
-      gameBoard[y - 1][x + 1] || -1,
-      gameBoard[y - 1][x + 2] || -1,
-      gameBoard[y - 1][x + 3] || -1,
+      validValue(gameBoard[y - 1][x + 1]),
+      validValue(gameBoard[y - 1][x + 2]),
+      validValue(gameBoard[y - 1][x + 3]),
     ];
     const diagonalUpLeft = [
-      gameBoard[y - 1][x - 1] || -1,
-      gameBoard[y - 1][x - 2] || -1,
-      gameBoard[y - 1][x - 3] || -1,
+      validValue(gameBoard[y - 1][x - 1]),
+      validValue(gameBoard[y - 1][x - 2]),
+      validValue(gameBoard[y - 1][x - 3]),
     ];
     const diagonalDownRight = [
-      gameBoard[y + 1][x + 1] || -1,
-      gameBoard[y + 1][x + 2] || -1,
-      gameBoard[y + 1][x + 3] || -1,
+      validValue(gameBoard[y + 1][x + 1]),
+      validValue(gameBoard[y + 1][x + 2]),
+      validValue(gameBoard[y + 1][x + 3]),
     ];
     const diagonalDownLeft = [
-      gameBoard[y + 1][x - 1] || -1,
-      gameBoard[y + 1][x - 2] || -1,
-      gameBoard[y + 1][x - 3] || -1,
+      validValue(gameBoard[y + 1][x - 1]),
+      validValue(gameBoard[y + 1][x - 2]),
+      validValue(gameBoard[y + 1][x - 3]),
     ];
+
+    const checkValue = (y, x, arr) => {
+      const value = gameBoard[y][x];
+      return (
+        arr.reduce((a, b) => a + b) + value === 8 ||
+        arr.reduce((a, b) => a + b) + value === 4
+      );
+    };
+
+    const win =
+      checkValue(y, x, horizontalLeft) ||
+      checkValue(y, x, verticalBottom) ||
+      checkValue(y, x, verticalTop) ||
+      checkValue(y, x, diagonalDownLeft) ||
+      checkValue(y, x, diagonalDownRight) ||
+      checkValue(y, x, diagonalUpLeft) ||
+      checkValue(y, x, diagonalUpRight) ||
+      checkValue(y, x, horizontalRight);
+
+    console.log(win);
+  };
+
+  const validValue = (entry) => {
+    try {
+      if (entry === undefined || entry === null) {
+        console.log("entry is undefined");
+        return -1;
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    return entry;
   };
 
   return (
