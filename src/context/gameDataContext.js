@@ -41,50 +41,51 @@ const GameDataProvider = ({ children }) => {
   const checkWinner = (y, x) => {
     // horizontal right and left
     console.log(y, "   -  ", x);
+
     const horizontalRight = [
-      validValue(gameBoard[y][x + 1]),
-      validValue(gameBoard[y][x + 2]),
-      validValue(gameBoard[y][x + 3]),
+      validValue(y, x + 1),
+      validValue(y, x + 2),
+      validValue(y, x + 3),
     ];
     const horizontalLeft = [
-      validValue(gameBoard[y][x - 1]),
-      validValue(gameBoard[y][x - 2]),
-      validValue(gameBoard[y][x - 3]),
+      validValue(y, x - 1),
+      validValue(y, x - 2),
+      validValue(y, x - 3),
     ];
 
     // vertical top and bottom
     const verticalTop = [
-      validValue(gameBoard[y - 1][x]),
-      validValue(gameBoard[y - 2][x]),
-      validValue(gameBoard[y - 3][x]),
+      validValue(y - 1, x),
+      validValue(y - 2, x),
+      validValue(y - 3, x),
     ];
     const verticalBottom = [
-      validValue(gameBoard[y + 1][x]),
-      validValue(gameBoard[y + 2][x]),
-      validValue(gameBoard[y + 3][x]),
+      validValue(y + 1, x),
+      validValue(y + 2, x),
+      validValue(y + 3, x),
     ];
 
     // diagonals
 
     const diagonalUpRight = [
-      validValue(gameBoard[y - 1][x + 1]),
-      validValue(gameBoard[y - 1][x + 2]),
-      validValue(gameBoard[y - 1][x + 3]),
+      validValue(y - 1, x + 1),
+      validValue(y - 1, x + 2),
+      validValue(y - 1, x + 3),
     ];
     const diagonalUpLeft = [
-      validValue(gameBoard[y - 1][x - 1]),
-      validValue(gameBoard[y - 1][x - 2]),
-      validValue(gameBoard[y - 1][x - 3]),
+      validValue(y - 1, x - 1),
+      validValue(y - 1, x - 2),
+      validValue(y - 1, x - 3),
     ];
     const diagonalDownRight = [
-      validValue(gameBoard[y + 1][x + 1]),
-      validValue(gameBoard[y + 1][x + 2]),
-      validValue(gameBoard[y + 1][x + 3]),
+      validValue(y + 1, x + 1),
+      validValue(y + 1, x + 2),
+      validValue(y + 1, x + 3),
     ];
     const diagonalDownLeft = [
-      validValue(gameBoard[y + 1][x - 1]),
-      validValue(gameBoard[y + 1][x - 2]),
-      validValue(gameBoard[y + 1][x - 3]),
+      validValue(y + 1, x - 1),
+      validValue(y + 1, x - 2),
+      validValue(y + 1, x - 3),
     ];
 
     const checkValue = (y, x, arr) => {
@@ -105,10 +106,12 @@ const GameDataProvider = ({ children }) => {
       checkValue(y, x, diagonalUpRight) ||
       checkValue(y, x, horizontalRight);
 
-    console.log(win);
+    console.log(win, " win ");
   };
 
-  const validValue = (entry) => {
+  const validValue = (y, x) => {
+    const board = [...gameBoard];
+    const entry = board[y][x];
     try {
       if (entry === undefined || entry === null) {
         console.log("entry is undefined");
