@@ -1,6 +1,8 @@
 import GameDataProvider from "./context/gameDataContext";
 import GameScreen from "./screens/game";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import MainScreen from "./screens/mainScreen";
+import RulesScreen from "./screens/RulesScreen";
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <GameDataProvider>
         <div className="connect-four">
           <Routes>
+            <Route exact path="/" element={<MainScreen />} />
+            <Route exact path="/game-rules" element={<RulesScreen />} />
             <Route exact path="/game" element={<GameScreen />} />
           </Routes>
         </div>
