@@ -1,13 +1,18 @@
 import GameDataProvider from "./context/gameDataContext";
 import GameScreen from "./screens/game";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <GameDataProvider>
-      <div className="connect-four">
-        <GameScreen />
-      </div>
-    </GameDataProvider>
+    <Router>
+      <GameDataProvider>
+        <div className="connect-four">
+          <Routes>
+            <Route exact path="/game" element={<GameScreen />} />
+          </Routes>
+        </div>
+      </GameDataProvider>
+    </Router>
   );
 }
 
