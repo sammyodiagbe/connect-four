@@ -12,7 +12,7 @@ const GameDataProvider = ({ children }) => {
     [0, 0, 0, 0, 0, 0, 0],
   ]);
   const [playerTurn, setPlayerTurn] = useState(1);
-  const [screenSize, setScreenSize] = useState();
+  const [gameEnded, setGameHasEnded] = useState(false);
 
   const play = (x) => {
     // let;
@@ -107,7 +107,7 @@ const GameDataProvider = ({ children }) => {
       checkValue(y, x, diagonalUpRight) ||
       checkValue(y, x, horizontalRight);
 
-    console.log(win, " win ");
+    setGameHasEnded(win);
   };
 
   const validValue = (y, x) => {
