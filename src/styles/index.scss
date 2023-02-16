@@ -1,3 +1,6 @@
+ $dark_purple: rgb(92,45,213);
+ $light_purple: rgb(121,69,255);
+ 
  * {
 
     padding: 0;
@@ -11,13 +14,34 @@
  }
 
  div.connect-four {
+    nav.navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5em;
+
+        a, button {
+            display: inline-block;
+            padding: 1em 1.5em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgb(92,45,213);
+            border-radius: 16px;
+            color: #fff;
+            font-size: .8em;
+        }
+    }
+ }
+
+ div.connect-four {
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #7945FF;
+    background: $light_purple;
     div.game-screen {
         div.board {
             width: 632px;

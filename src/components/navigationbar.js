@@ -3,7 +3,7 @@ import Logo from "./logo";
 
 const NavigationBar = () => {
   return (
-    <nav>
+    <nav className="navigation">
       <Link to="/" className="btn">
         Menu
       </Link>
