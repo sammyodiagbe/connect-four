@@ -33,6 +33,7 @@ div.connect-four nav.navigation a, div.connect-four nav.navigation button {
   border-radius: 16px;
   color: #fff;
   font-size: .8em;
+  cursor: pointer;
 }
 
 div.connect-four {
