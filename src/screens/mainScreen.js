@@ -7,7 +7,7 @@ const MainScreen = () => {
       {/* navigation */}
       <main className="main">
         <Link to="/game">
-          <span>Player vs Player</span>
+          <span>Player vs Player.</span>
           <PlayVsPlayer />
         </Link>
       </main>
