@@ -1,4 +1,4 @@
-import MarkerRed from "../components/markerRed";
+import RedIconCheck from "../components/markerRed";
 
 const RulesScreen = () => {
   return (
@@ -18,7 +18,7 @@ const RulesScreen = () => {
         <li>The game ends when there is a 4-in-row or stalemate.</li>
         <li>The starter of the previous game goes second on the next game.</li>
       </ol>
-      <MarkerRed />
+      <RedIconCheck />
     </div>
   );
 };
