@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import NavigationBar from "../components/navigationbar";
 import Seed from "../components/seed";
 import { gameContext } from "../context/gameDataContext";
 
@@ -17,6 +18,7 @@ const GameScreen = () => {
 
   return (
     <div className="game-screen">
+      <NavigationBar />
       <div className="board">
         <div className="board-top">
           <div className="board-row" data-x="0" onClick={playToColumn}>
