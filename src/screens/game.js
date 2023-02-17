@@ -244,7 +244,7 @@ const GameScreen = () => {
             </div>
             <div className="player-content opponent">
               <PlayerTwo />
-              <b>player 1</b>
+              <b>player 2</b>
               <h1>20</h1>
             </div>
           </div>
