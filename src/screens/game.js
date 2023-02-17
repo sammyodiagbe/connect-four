@@ -9,14 +9,30 @@ import { gameContext } from "../context/gameDataContext";
 const GameScreen = () => {
   const [timer, setTimer] = useState(15);
   const dataContext = useContext(gameContext);
-  const { gameBoard, play, playerTurn, playerOnePoint, playerTwoPoint } =
-    dataContext;
+  const {
+    gameBoard,
+    play,
+    playerTurn,
+    playerOnePoint,
+    playerTwoPoint,
+    setPlayerTurn,
+  } = dataContext;
   // const numberOfRows = 7;
 
   // const numberOfCols = 6;
 
   useEffect(() => {
     const id = setInterval(() => {
+      if (timer <= 0) {
+        // switch the user
+        if (playerTurn === 1) {
+          setPlayerTurn(2);
+        } else {
+          setPlayerTurn(1);
+        }
+        setTimer(15);
+        return;
+      }
       setTimer(timer - 1);
     }, 1000);
     return () => clearInterval(id);
