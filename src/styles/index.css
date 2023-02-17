@@ -195,12 +195,16 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   background: url(../assets/turn-background-red.svg) no-repeat;
   background-position: center;
   background-size: contain;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status.player-2 {
   background: url(../assets/turn-background-yellow.svg) no-repeat;
   background-position: center;
   background-size: contain;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 div.connect-four {

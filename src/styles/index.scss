@@ -148,12 +148,14 @@ svg {
                                 background: url(../assets/turn-background-red.svg) no-repeat;
                                 background-position: center;
                             background-size: contain;
+                            box-shadow: none;
                             }
 
                             &.player-2 {
                                 background: url(../assets/turn-background-yellow.svg) no-repeat;
                                 background-position: center;
                             background-size: contain;
+                            box-shadow: none;
                             }
                         }
                     }

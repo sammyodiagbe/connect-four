@@ -23,6 +23,7 @@ const GameScreen = () => {
   // const numberOfCols = 6;
 
   useEffect(() => {
+    if (gameEnded) return;
     const id = setInterval(() => {
       if (timer <= 0) {
         // switch the user
