@@ -216,6 +216,12 @@ const GameScreen = () => {
                   tabIndex="-1"
                 ></button>
               </div>
+
+              {/* game */}
+              <div className="game-status player-1">
+                <b>Player 1's turn</b>
+                <h1>10s</h1>
+              </div>
             </div>
             <div className="player-content opponent">
               <PlayerTwo />

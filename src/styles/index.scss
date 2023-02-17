@@ -23,7 +23,8 @@ svg {
         bottom:0;
         width: 0;
         height: 30%;
-        border-radius: 50px;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
         width:100%;
         background-color: $dark_purple;
         z-index: 1;
@@ -89,6 +90,34 @@ svg {
                     div.board {
                         grid-area: board;
                         z-index:3;
+                        position: relative;
+                        div.game-status{
+                            height: 130px;
+                            width: 130px;
+                            z-index: 10;
+                            position: absolute;
+                            bottom: -80px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: flex;
+                            align-items:center;
+                            justify-content: center;
+                            flex-direction: column; 
+                            
+                            b {
+                                text-transform: uppercase;
+                                font-size: .8em;
+                            }
+                            &.player-1 {
+                                background: url(../assets/turn-background-yellow.svg) no-repeat;
+                                background-position: center;
+                            background-size: contain;
+                            }
+
+                            &.player-2 {
+                                background: url(../assets/turn-background-yellow.svg) no-repeat;
+                            }
+                        }
                     }
                 }
             }
