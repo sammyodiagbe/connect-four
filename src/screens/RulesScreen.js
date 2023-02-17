@@ -1,4 +1,4 @@
-import RedIconCheck from "../components/markerRed";
+import RedIconCheck from "../components/checkIcon";
 
 const RulesScreen = () => {
   return (

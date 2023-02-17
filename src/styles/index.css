@@ -40,6 +40,7 @@ div.connect-four div.container nav.navigation {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1em;
+  margin-bottom: 1em;
 }
 
 div.connect-four div.container nav.navigation a, div.connect-four div.container nav.navigation button {
@@ -117,6 +118,34 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   position: relative;
 }
 
+div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back button.button {
+  position: relative;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back button.button:hover span.marker {
+  -webkit-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back button.button span.marker {
+  display: block;
+  position: absolute;
+  width: 38px;
+  height: 15px;
+  top: -30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) scale(0);
+          transform: translateX(-50%) scale(0);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status {
   height: 130px;
   width: 130px;
@@ -147,13 +176,15 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status.player-1 {
-  background: url(../assets/turn-background-yellow.svg) no-repeat;
+  background: url(../assets/turn-background-red.svg) no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status.player-2 {
   background: url(../assets/turn-background-yellow.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 div.connect-four {

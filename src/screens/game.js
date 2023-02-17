@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import NavigationBar from "../components/navigationbar";
+import PlacementIndicator from "../components/placementIndicator";
 import PlayerOne from "../components/playerOne";
 import PlayerTwo from "../components/playerTwo";
 import Seed from "../components/seed";
@@ -7,7 +8,7 @@ import { gameContext } from "../context/gameDataContext";
 
 const GameScreen = () => {
   const dataContext = useContext(gameContext);
-  const { gameBoard, play } = dataContext;
+  const { gameBoard, play, playerTurn } = dataContext;
   // const numberOfRows = 7;
 
   // const numberOfCols = 6;
@@ -178,47 +179,65 @@ const GameScreen = () => {
                   data-x={0}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
                 <button
                   className="button"
                   data-x={1}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
                 <button
                   className="button"
                   data-x={2}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
                 <button
                   className="button"
                   data-x={3}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
                 <button
                   className="button"
                   data-x={4}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
                 <button
                   className="button"
                   data-x={5}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
                 <button
                   className="button"
                   data-x={6}
                   onClick={playToColumn}
                   tabIndex="-1"
-                ></button>
+                >
+                  <PlacementIndicator />
+                </button>
               </div>
 
               {/* game */}
-              <div className="game-status player-1">
+              <div
+                className={`game-status ${
+                  playerTurn === 1 ? "player-1" : "player-2"
+                }`}
+              >
                 <b>Player 1's turn</b>
                 <h1>10s</h1>
               </div>
