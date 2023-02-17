@@ -35,6 +35,33 @@
             cursor: pointer;
         }
     }
+
+    div.game-screen {
+        main.main-content {
+            div.game {
+                display: grid;
+                grid-template-areas: 
+                "player . opponent"
+                "board board board";
+                gap: 30px;
+                div.player-content {
+                    height: 110px;
+                    width: 120px;
+                    background: #fff;
+                    &.player {
+                        grid-area: player;
+                    }
+                    &.opponent {
+                        grid-area: opponent;
+                    }
+                }
+
+                div.board {
+                    grid-area: board;
+                }
+            }
+        }
+    }
  }
 
  div.connect-four {

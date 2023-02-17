@@ -39,6 +39,38 @@ div.connect-four nav.navigation a, div.connect-four nav.navigation button {
   cursor: pointer;
 }
 
+div.connect-four div.game-screen main.main-content div.game {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "player . opponent" "board board board";
+  gap: 30px;
+}
+
+div.connect-four div.game-screen main.main-content div.game div.player-content {
+  height: 110px;
+  width: 120px;
+  background: #fff;
+}
+
+div.connect-four div.game-screen main.main-content div.game div.player-content.player {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: player;
+}
+
+div.connect-four div.game-screen main.main-content div.game div.player-content.opponent {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: opponent;
+}
+
+div.connect-four div.game-screen main.main-content div.game div.board {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: board;
+}
+
 div.connect-four {
   min-height: 100vh;
   min-width: 100vw;

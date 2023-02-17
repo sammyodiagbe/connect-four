@@ -203,7 +203,7 @@ const GameScreen = () => {
               ></button>
             </div>
           </div>
-          <div className="player-content player"></div>
+          <div className="player-content opponent"></div>
         </div>
       </main>
     </div>
