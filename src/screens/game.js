@@ -177,36 +177,43 @@ const GameScreen = () => {
                   className="button"
                   data-x={0}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
                 <button
                   className="button"
                   data-x={1}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
                 <button
                   className="button"
                   data-x={2}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
                 <button
                   className="button"
                   data-x={3}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
                 <button
                   className="button"
                   data-x={4}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
                 <button
                   className="button"
                   data-x={5}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
                 <button
                   className="button"
                   data-x={6}
                   onClick={playToColumn}
+                  tabIndex="-1"
                 ></button>
               </div>
             </div>
