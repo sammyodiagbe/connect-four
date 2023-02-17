@@ -17,6 +17,17 @@ svg {
   max-width: 100%;
 }
 
+div.connect-four div.indicator {
+  position: fixed;
+  bottom: 0;
+  width: 0;
+  height: 30%;
+  border-radius: 50px;
+  width: 100%;
+  background-color: #5c2dd5;
+  z-index: 1;
+}
+
 div.connect-four div.container nav.navigation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,6 +112,7 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: board;
+  z-index: 3;
 }
 
 div.connect-four {

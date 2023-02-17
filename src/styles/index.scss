@@ -18,7 +18,16 @@ svg {
     max-width: 100%;;
 }
  div.connect-four {
-
+    div.indicator{
+        position: fixed;
+        bottom:0;
+        width: 0;
+        height: 30%;
+        border-radius: 50px;
+        width:100%;
+        background-color: $dark_purple;
+        z-index: 1;
+    }
     div.container {
         nav.navigation {
             display: flex;
@@ -79,6 +88,7 @@ svg {
     
                     div.board {
                         grid-area: board;
+                        z-index:3;
                     }
                 }
             }
