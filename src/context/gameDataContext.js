@@ -28,13 +28,16 @@ const GameDataProvider = ({ children }) => {
     while (y >= 0) {
       if (newBoard[y][x] === 0) {
         newBoard[y][x] = playerTurn;
-        if (playerTurn == 1) {
-          setPlayerTurn(2);
-        } else {
-          setPlayerTurn(1);
-        }
+
         setGameBoard(newBoard);
-        setGameHasEnded(checkWinner(y, x));
+        const checkwin = setGameHasEnded(checkWinner(y, x));
+        if (!checkwin) {
+          if (playerTurn == 1) {
+            setPlayerTurn(2);
+          } else {
+            setPlayerTurn(1);
+          }
+        }
         return;
       }
       y -= 1;
@@ -152,6 +155,7 @@ const GameDataProvider = ({ children }) => {
         playerOnePoint,
         playerTwoPoint,
         startGameTimer,
+        gameEnded,
       }}
     >
       {children}

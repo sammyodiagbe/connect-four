@@ -16,6 +16,7 @@ const GameScreen = () => {
     playerOnePoint,
     playerTwoPoint,
     setPlayerTurn,
+    gameEnded,
   } = dataContext;
   // const numberOfRows = 7;
 
@@ -261,11 +262,21 @@ const GameScreen = () => {
               {/* game */}
               <div
                 className={`game-status ${
-                  playerTurn === 1 ? "player-1" : "player-2"
+                  !gameEnded ? (playerTurn === 1 ? "player-1" : "player-2") : ""
                 }`}
               >
-                <b>Player {playerTurn}'s turn</b>
-                <h1>{timer < 10 ? `0${timer}` : timer}s</h1>
+                {gameEnded ? (
+                  <>
+                    <b>Player {playerTurn}</b>
+                    <h2>WINS</h2>
+                    <button className="btn">Play again</button>
+                  </>
+                ) : (
+                  <>
+                    <b>Player {playerTurn}'s turn</b>
+                    <h1>{timer < 10 ? `0${timer}` : timer}s</h1>
+                  </>
+                )}
               </div>
             </div>
             <div className="player-content opponent">

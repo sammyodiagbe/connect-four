@@ -147,7 +147,7 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status {
-  height: 130px;
+  height: 100px;
   width: 130px;
   z-index: 10;
   position: absolute;
@@ -168,6 +168,22 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: #fff;
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status h2 {
+  margin: .3em 0;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status button.btn {
+  background: #5c2dd5;
+  color: #fff;
+  border-radius: 15px;
+  padding: .4em 1em;
+  cursor: pointer;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status b {
