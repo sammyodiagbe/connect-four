@@ -16,7 +16,8 @@ const GameDataProvider = ({ children }) => {
 
   const play = (x) => {
     // let;
-    console.log("playing at ", x);
+    console.log(gameEnded);
+    if (gameEnded) return;
     const newBoard = [...gameBoard];
     if (newBoard[0][x] !== 0) return;
     let y = 5;
@@ -29,7 +30,7 @@ const GameDataProvider = ({ children }) => {
           setPlayerTurn(1);
         }
         setGameBoard(newBoard);
-        checkWinner(y, x);
+        setGameHasEnded(checkWinner(y, x));
         return;
       }
       y -= 1;
@@ -39,9 +40,6 @@ const GameDataProvider = ({ children }) => {
   };
 
   const checkWinner = (y, x) => {
-    // horizontal right and left
-    console.log(y, "   -  ", x);
-
     const horizontalRight = [
       validValue(y, x + 1),
       validValue(y, x + 2),
@@ -90,12 +88,9 @@ const GameDataProvider = ({ children }) => {
 
     const checkValue = (y, x, arr) => {
       const value = gameBoard[y][x];
-      const addedValue = value + arr.reduce((a, b) => a + b);
-      return [4, 8].includes(addedValue);
+      const won = arr.every((a) => a == value);
+      return won;
     };
-
-    console.log(diagonalDownLeft);
-    console.log(diagonalDownRight);
 
     const win =
       checkValue(y, x, horizontalLeft) ||
@@ -107,7 +102,7 @@ const GameDataProvider = ({ children }) => {
       checkValue(y, x, diagonalUpRight) ||
       checkValue(y, x, horizontalRight);
 
-    setGameHasEnded(win);
+    return win;
   };
 
   const validValue = (y, x) => {
@@ -120,13 +115,10 @@ const GameDataProvider = ({ children }) => {
             : -1
           : -1;
       if (entry === undefined || entry === null) {
-        console.log("entry is undefined");
         return -1;
       }
       return entry;
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   return (
