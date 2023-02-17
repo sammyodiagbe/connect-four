@@ -1,13 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
 * {
   padding: 0;
   margin: 0;
   border: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 body, html {
   font-size: 16px;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 div.connect-four nav.navigation {

@@ -1,16 +1,18 @@
  $dark_purple: rgb(92,45,213);
  $light_purple: rgb(121,69,255);
- 
+ @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
  * {
 
     padding: 0;
     margin: 0;
     border: 0;
     box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
  }
 
  body, html {
     font-size: 16px;
+    font-family: 'Space Grotesk', sans-serif;
  }
 
  div.connect-four {
