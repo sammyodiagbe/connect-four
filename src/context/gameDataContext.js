@@ -13,6 +13,9 @@ const GameDataProvider = ({ children }) => {
   ]);
   const [playerTurn, setPlayerTurn] = useState(1);
   const [gameEnded, setGameHasEnded] = useState(false);
+  const [timer, setTimer] = useState(15);
+  const [playerOnePoint, setPlayerOnePoint] = useState(0);
+  const [playerTwoPoint, setPlayerTwoPoint] = useState(0);
 
   const play = (x) => {
     // let;
@@ -123,7 +126,16 @@ const GameDataProvider = ({ children }) => {
 
   return (
     <gameContext.Provider
-      value={{ gameBoard, playerTurn, setGameBoard, setPlayerTurn, play }}
+      value={{
+        gameBoard,
+        playerTurn,
+        setGameBoard,
+        setPlayerTurn,
+        play,
+        timer,
+        playerOnePoint,
+        playerTwoPoint,
+      }}
     >
       {children}
     </gameContext.Provider>

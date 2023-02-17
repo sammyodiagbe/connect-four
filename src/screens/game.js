@@ -8,7 +8,8 @@ import { gameContext } from "../context/gameDataContext";
 
 const GameScreen = () => {
   const dataContext = useContext(gameContext);
-  const { gameBoard, play, playerTurn } = dataContext;
+  const { gameBoard, play, playerTurn, timer, playerOnePoint, playerTwoPoint } =
+    dataContext;
   // const numberOfRows = 7;
 
   // const numberOfCols = 6;
@@ -28,7 +29,7 @@ const GameScreen = () => {
             <div className="player-content player">
               <PlayerOne />
               <b>player 1</b>
-              <h1>12</h1>
+              <h1>{playerOnePoint}</h1>
             </div>
             <div className="board">
               <div className="board-top">
@@ -238,14 +239,14 @@ const GameScreen = () => {
                   playerTurn === 1 ? "player-1" : "player-2"
                 }`}
               >
-                <b>Player 1's turn</b>
-                <h1>10s</h1>
+                <b>Player {playerTurn}'s turn</b>
+                <h1>{timer < 10 ? `0${timer}` : timer}s</h1>
               </div>
             </div>
             <div className="player-content opponent">
               <PlayerTwo />
               <b>player 2</b>
-              <h1>20</h1>
+              <h1>{playerTwoPoint}</h1>
             </div>
           </div>
         </main>
