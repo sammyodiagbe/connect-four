@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import NavigationBar from "../components/navigationbar";
 import PlacementIndicator from "../components/placementIndicator";
 import PlayerOne from "../components/playerOne";
@@ -7,17 +7,26 @@ import Seed from "../components/seed";
 import { gameContext } from "../context/gameDataContext";
 
 const GameScreen = () => {
+  const [timer, setTimer] = useState(15);
   const dataContext = useContext(gameContext);
-  const { gameBoard, play, playerTurn, timer, playerOnePoint, playerTwoPoint } =
+  const { gameBoard, play, playerTurn, playerOnePoint, playerTwoPoint } =
     dataContext;
   // const numberOfRows = 7;
 
   // const numberOfCols = 6;
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTimer(timer - 1);
+    }, 1000);
+    return () => clearInterval(id);
+  }, [timer]);
+
   const playToColumn = (event) => {
     let { x } = event.target.dataset;
     x = parseInt(x);
     play(x);
+    setTimer(15);
   };
 
   return (

@@ -16,6 +16,7 @@ const GameDataProvider = ({ children }) => {
   const [timer, setTimer] = useState(15);
   const [playerOnePoint, setPlayerOnePoint] = useState(0);
   const [playerTwoPoint, setPlayerTwoPoint] = useState(0);
+  let gameTimerInterval;
 
   const play = (x) => {
     // let;
@@ -108,6 +109,21 @@ const GameDataProvider = ({ children }) => {
     return win;
   };
 
+  const startGameTimer = () => {
+    gameTimerInterval = setInterval(() => {
+      setTimer(timer - 1);
+      console.log("hello world", timer);
+    }, 1000);
+  };
+  // console.log(timer);
+  // if (timer <= 0) {
+  //   // clear the interval
+  //   clearInterval(gameTimerInterval);
+  //   gameTimerInterval = null;
+  //   console.log("timer has ended");
+  // }
+  // startGameTimer();
+
   const validValue = (y, x) => {
     try {
       const board = [...gameBoard];
@@ -135,6 +151,7 @@ const GameDataProvider = ({ children }) => {
         timer,
         playerOnePoint,
         playerTwoPoint,
+        startGameTimer,
       }}
     >
       {children}
