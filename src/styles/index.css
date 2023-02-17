@@ -13,7 +13,11 @@ body, html {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-div.connect-four nav.navigation {
+svg {
+  max-width: 100%;
+}
+
+div.connect-four div.container nav.navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,10 +27,10 @@ div.connect-four nav.navigation {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 1.5em;
+  padding: 1em;
 }
 
-div.connect-four nav.navigation a, div.connect-four nav.navigation button {
+div.connect-four div.container nav.navigation a, div.connect-four div.container nav.navigation button {
   display: inline-block;
   padding: 1em 1.5em;
   text-transform: uppercase;
@@ -39,32 +43,60 @@ div.connect-four nav.navigation a, div.connect-four nav.navigation button {
   cursor: pointer;
 }
 
-div.connect-four div.game-screen main.main-content div.game {
+div.connect-four div.container div.game-screen main.main-content div.game {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "player . opponent" "board board board";
   gap: 30px;
 }
 
-div.connect-four div.game-screen main.main-content div.game div.player-content {
-  height: 110px;
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content {
+  height: 150px;
   width: 120px;
   background: #fff;
+  position: relative;
+  border-radius: 8px;
 }
 
-div.connect-four div.game-screen main.main-content div.game div.player-content.player {
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon {
+  width: 50px;
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-content: center;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon p {
+  text-transform: uppercase;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content.player {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: player;
 }
 
-div.connect-four div.game-screen main.main-content div.game div.player-content.opponent {
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content.opponent {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: opponent;
 }
 
-div.connect-four div.game-screen main.main-content div.game div.board {
+div.connect-four div.container div.game-screen main.main-content div.game div.board {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -74,15 +106,6 @@ div.connect-four div.game-screen main.main-content div.game div.board {
 div.connect-four {
   min-height: 100vh;
   min-width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   background: #7945ff;
 }
 
@@ -219,6 +242,86 @@ div.connect-four div.game-screen div.board div.board-top div.board-row:hover {
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  div.connect-four div.container {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  div.connect-four div.container nav.navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 632px;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  div.connect-four div.container nav.navigation a, div.connect-four div.container nav.navigation button {
+    display: inline-block;
+    padding: 1em 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    background: #5c2dd5;
+    border-radius: 16px;
+    color: #fff;
+    font-size: .8em;
+    cursor: pointer;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "player board opponent";
+    gap: 30px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content {
+    height: 140px;
+    width: 120px;
+    background: #fff;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content b {
+    margin-bottom: 2px;
+    text-transform: uppercase;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content h1 {
+    font-size: 42px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content.player {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: player;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content.opponent {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: opponent;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: board;
   }
 }
 /*# sourceMappingURL=index.css.map */

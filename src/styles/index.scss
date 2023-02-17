@@ -14,62 +14,85 @@
     font-size: 16px;
     font-family: 'Space Grotesk', sans-serif;
  }
-
+svg {
+    max-width: 100%;;
+}
  div.connect-four {
-    nav.navigation {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1.5em;
 
-        a, button {
-            display: inline-block;
-            padding: 1em 1.5em;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: bold;
-            background: rgb(92,45,213);
-            border-radius: 16px;
-            color: #fff;
-            font-size: .8em;
-            cursor: pointer;
+    div.container {
+        nav.navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+           
+            padding: 1em;
+            a, button {
+                display: inline-block;
+                padding: 1em 1.5em;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: bold;
+                background: rgb(92,45,213);
+                border-radius: 16px;
+                color: #fff;
+                font-size: .8em;
+                cursor: pointer;
+            }
         }
-    }
-
-    div.game-screen {
-        main.main-content {
-            div.game {
-                display: grid;
-                grid-template-areas: 
-                "player . opponent"
-                "board board board";
-                gap: 30px;
-                div.player-content {
-                    height: 110px;
-                    width: 120px;
-                    background: #fff;
-                    &.player {
-                        grid-area: player;
+    
+        div.game-screen {
+            main.main-content {
+                div.game {
+                    display: grid;
+                    grid-template-areas: 
+                    "player . opponent"
+                    "board board board";
+                    gap: 30px;
+                    div.player-content {
+                        height: 150px;
+                        width: 120px;
+                        background: #fff;
+                        position: relative;
+                        border-radius: 8px;
+                        div.player-icon {
+                            width: 50px;
+                            position: absolute;
+                            top: -28px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: flex;
+                            flex-direction: column;
+                            align-content: center;
+                            justify-content: center;
+                            justify-content: center; 
+                            p {
+                                text-transform: uppercase;
+                            }
+                        }
+                        &.player {
+                            grid-area: player;
+                        }
+                        &.opponent {
+                            grid-area: opponent;
+                        }
                     }
-                    &.opponent {
-                        grid-area: opponent;
+    
+                    div.board {
+                        grid-area: board;
                     }
-                }
-
-                div.board {
-                    grid-area: board;
                 }
             }
         }
+
     }
  }
 
  div.connect-four {
     min-height: 100vh;
     min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 
     background: $light_purple;
     div.game-screen {
@@ -171,3 +194,73 @@
         transform: translateY(0);
     }
  }
+
+ @media screen and (min-width: 1110px) {
+    div.connect-four {
+        div.container {
+            width: 1000px;
+            margin: 0 auto;
+            nav.navigation {
+                display: flex;
+                width: 632px;
+                margin: 0 auto;
+                
+                align-items: center;
+                justify-content: space-between;
+        
+                a, button {
+                    display: inline-block;
+                    padding: 1em 1.5em;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-weight: bold;
+                    background: rgb(92,45,213);
+                    border-radius: 16px;
+                    color: #fff;
+                    font-size: .8em;
+                    cursor: pointer;
+                }
+            }
+        
+            div.game-screen {
+                main.main-content {
+                    div.game {
+                        display: grid;
+                        grid-template-areas: 
+                        "player board opponent";
+                        gap: 30px;
+                        div.player-content {
+                            height: 140px;
+                            width: 120px;
+                            background: #fff;
+                            align-self: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+                            b {
+                                margin-bottom:2px;
+                                text-transform: uppercase;
+                            }
+                            h1{
+                                font-size: 42px;
+                            }
+                            &.player {
+                                grid-area: player;
+                            }
+                            &.opponent {
+                                grid-area: opponent;
+                            }
+                        }
+        
+                        div.board {
+                            grid-area: board;
+                        }
+                    }
+                }
+            }
+
+        }
+     }
+    }
+ 

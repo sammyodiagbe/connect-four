@@ -9,11 +9,13 @@ function App() {
     <Router>
       <GameDataProvider>
         <div className="connect-four">
-          <Routes>
-            <Route exact path="/" element={<MainScreen />} />
-            <Route exact path="/game-rules" element={<RulesScreen />} />
-            <Route exact path="/game" element={<GameScreen />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={<MainScreen />} />
+              <Route exact path="/game-rules" element={<RulesScreen />} />
+              <Route exact path="/game" element={<GameScreen />} />
+            </Routes>
+          </div>
         </div>
       </GameDataProvider>
     </Router>
