@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import Logo from "./logo";
 
-const NavigationBar = () => {
+const NavigationBar = ({ showMenu }) => {
   return (
     <nav className="navigation">
-      <Link to="/" className="btn">
+      <Link
+        className="btn"
+        onClick={(event) => {
+          event.preventDefault();
+          showMenu(true);
+        }}
+      >
         Menu
       </Link>
       <Logo />

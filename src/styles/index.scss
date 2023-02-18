@@ -1,6 +1,7 @@
 $dark_purple: rgb(92, 45, 213);
 $light_purple: rgb(121, 69, 255);
 $yellow: #ffce67;
+$pink: #fd6687;
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
 * {
   padding: 0;
@@ -22,6 +23,10 @@ button {
   &:hover {
     background: none;
   }
+}
+
+a {
+  text-decoration: none;
 }
 
 body,
@@ -330,6 +335,46 @@ div.connect-four {
             }
           }
         }
+      }
+    }
+  }
+  div.game-menu {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    div.menu {
+      width: 300px;
+      background: $light_purple;
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      button {
+        display: block;
+        cursor: pointer;
+      }
+      a {
+        background: $pink;
+        display: block;
+        color: #fff;
+        cursor: pointer;
+      }
+      button,
+      a,
+      h1 {
+        font-weight: 900;
+        padding: 1em;
+        margin-bottom: 1.5em;
+        text-transform: uppercase;
       }
     }
   }

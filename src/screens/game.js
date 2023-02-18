@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import NavigationBar from "../components/navigationbar";
 import PlacementIndicator from "../components/placementIndicator";
 import PlayerOne from "../components/playerOne";
@@ -8,6 +9,7 @@ import { gameContext } from "../context/gameDataContext";
 
 const GameScreen = () => {
   const [timer, setTimer] = useState(15);
+  const [showMenu, setShowMenu] = useState(false);
   const dataContext = useContext(gameContext);
   const {
     gameBoard,
@@ -49,7 +51,7 @@ const GameScreen = () => {
 
   return (
     <>
-      <NavigationBar />
+      <NavigationBar showMenu={setShowMenu} />
       <div className="game-screen">
         <main className="main-content">
           <div className="game">
@@ -289,6 +291,16 @@ const GameScreen = () => {
         </main>
       </div>
       <div className="indicator"></div>
+      {showMenu && (
+        <div className="game-menu">
+          <div className="menu">
+            <h1>Pause</h1>
+            <button className="btn">Continue game</button>
+            <button className="btn">Restart game</button>
+            <Link to="/">Quit game</Link>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -20,6 +20,10 @@ button:hover {
   background: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 body,
 html {
   font-size: 16px;
@@ -437,6 +441,64 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   background-size: contain;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+div.connect-four div.game-menu {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+div.connect-four div.game-menu div.menu {
+  width: 300px;
+  background: #7945ff;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+div.connect-four div.game-menu div.menu button {
+  display: block;
+  cursor: pointer;
+}
+
+div.connect-four div.game-menu div.menu a {
+  background: #fd6687;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+}
+
+div.connect-four div.game-menu div.menu button,
+div.connect-four div.game-menu div.menu a,
+div.connect-four div.game-menu div.menu h1 {
+  font-weight: 900;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
 }
 
 @-webkit-keyframes slidein {
