@@ -127,6 +127,21 @@ const GameDataProvider = ({ children }) => {
   // }
   // startGameTimer();
 
+  const resetGame = () => {
+    const newboard = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
+    setGameBoard(newboard);
+    setPlayerTurn(1);
+    setPlayerOnePoint(0);
+    setPlayerTwoPoint(0);
+  };
+
   const validValue = (y, x) => {
     try {
       const board = [...gameBoard];
@@ -156,6 +171,7 @@ const GameDataProvider = ({ children }) => {
         playerTwoPoint,
         startGameTimer,
         gameEnded,
+        resetGame,
       }}
     >
       {children}

@@ -19,10 +19,6 @@ button {
   &:focus {
     background: none;
   }
-
-  &:hover {
-    background: none;
-  }
 }
 
 a {
@@ -358,6 +354,7 @@ div.connect-four {
       justify-content: center;
       text-align: center;
       color: #fff;
+      border-radius: 15px;
       button {
         display: block;
         cursor: pointer;

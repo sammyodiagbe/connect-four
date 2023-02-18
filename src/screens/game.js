@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavigationBar from "../components/navigationbar";
 import PlacementIndicator from "../components/placementIndicator";
 import PlayerOne from "../components/playerOne";
@@ -11,6 +11,7 @@ const GameScreen = () => {
   const [timer, setTimer] = useState(15);
   const [showMenu, setShowMenu] = useState(false);
   const dataContext = useContext(gameContext);
+  const navigate = useNavigate();
   const {
     gameBoard,
     play,
@@ -19,6 +20,7 @@ const GameScreen = () => {
     playerTwoPoint,
     setPlayerTurn,
     gameEnded,
+    resetGame,
   } = dataContext;
   // const numberOfRows = 7;
 
@@ -295,9 +297,32 @@ const GameScreen = () => {
         <div className="game-menu">
           <div className="menu">
             <h1>Pause</h1>
-            <button className="btn">Continue game</button>
-            <button className="btn">Restart game</button>
-            <Link to="/">Quit game</Link>
+            <button
+              className="btn"
+              onClick={() => {
+                setShowMenu(false);
+              }}
+            >
+              Continue game
+            </button>
+            <button
+              className="btn"
+              onClick={() => {
+                resetGame();
+                setShowMenu(false);
+              }}
+            >
+              Restart game
+            </button>
+            <Link
+              onClick={(event) => {
+                event.preventDefault();
+                setShowMenu(false);
+                navigate("/");
+              }}
+            >
+              Quit game
+            </Link>
           </div>
         </div>
       )}

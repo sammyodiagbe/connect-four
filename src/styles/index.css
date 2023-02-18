@@ -16,10 +16,6 @@ button:focus {
   background: none;
 }
 
-button:hover {
-  background: none;
-}
-
 a {
   text-decoration: none;
 }
@@ -478,6 +474,7 @@ div.connect-four div.game-menu div.menu {
           justify-content: center;
   text-align: center;
   color: #fff;
+  border-radius: 15px;
 }
 
 div.connect-four div.game-menu div.menu button {
