@@ -16,7 +16,7 @@ const MainScreen = () => {
               <PlayVsPlayer />
             </span>
           </Link>
-          <Link to="/game-rule">Game Rules</Link>
+          <Link to="/game-rules">Game Rules</Link>
         </div>
       </main>
     </>

@@ -50,6 +50,39 @@ div.connect-four {
     z-index: 1;
   }
   div.container {
+    min-height: 100vh;
+    div.rules-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+
+      div.rules {
+        width: 350px;
+        padding: 1.5em;
+        background: #fff;
+        border-radius: 15px;
+        h1 {
+          color: $light_purple;
+          margin: 0.4em 0;
+        }
+        ol {
+          padding-left: 1.5em;
+          li {
+            padding-bottom: 0.5em;
+          }
+        }
+
+        div.checkmark {
+          width: 80px;
+          position: relative;
+          left: 50%;
+          bottom: -70px;
+          transform: translateX(-50%);
+        }
+      }
+    }
     main.main-menu {
       height: 100vh;
       width: 100vw;
