@@ -288,6 +288,7 @@ const GameScreen = () => {
           </div>
         </main>
       </div>
+      <div className="indicator"></div>
     </>
   );
 };

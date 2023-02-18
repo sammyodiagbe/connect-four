@@ -16,7 +16,6 @@ function App() {
               <Route exact path="/game" element={<GameScreen />} />
             </Routes>
           </div>
-          <div className="indicator"></div>
         </div>
       </GameDataProvider>
     </Router>

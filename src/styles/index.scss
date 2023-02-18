@@ -1,5 +1,6 @@
 $dark_purple: rgb(92, 45, 213);
 $light_purple: rgb(121, 69, 255);
+$yellow: #ffce67;
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
 * {
   padding: 0;
@@ -48,6 +49,53 @@ div.connect-four {
     z-index: 1;
   }
   div.container {
+    main.main-menu {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $dark_purple;
+      div.content {
+        min-height: 250px;
+        width: 300px;
+        padding: 1em;
+        background: $light_purple;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 5px 10px rgb(0, 0, 0);
+        border-radius: 30px;
+        a {
+          padding: 1em;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          text-decoration: none;
+          font-size: 1em;
+          background: #fff;
+          color: #000000;
+          font-weight: bold;
+          margin: 10px 0;
+          border-radius: 30px;
+          &.play-button {
+            background: $yellow;
+            margin-top: 50px;
+          }
+          span.icon {
+            width: 50px;
+          }
+        }
+      }
+      z-index: 5;
+
+      div.icon-main {
+        svg {
+          width: 150px;
+        }
+      }
+    }
     nav.navigation {
       display: flex;
       align-items: center;
