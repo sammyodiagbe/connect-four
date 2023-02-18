@@ -51,6 +51,9 @@ div.connect-four div.indicator {
 div.connect-four div.container main.main-menu {
   height: 100vh;
   width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

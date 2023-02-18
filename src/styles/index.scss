@@ -52,6 +52,9 @@ div.connect-four {
     main.main-menu {
       height: 100vh;
       width: 100vw;
+      position: fixed;
+      left: 0;
+      top: 0;
       display: flex;
       align-items: center;
       justify-content: center;
