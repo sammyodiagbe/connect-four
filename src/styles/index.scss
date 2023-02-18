@@ -1,345 +1,429 @@
- $dark_purple: rgb(92,45,213);
- $light_purple: rgb(121,69,255);
- @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
- * {
-
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
- }
-
- body, html {
-    font-size: 16px;
-    font-family: 'Space Grotesk', sans-serif;
- }
-svg {
-    max-width: 100%;;
+$dark_purple: rgb(92, 45, 213);
+$light_purple: rgb(121, 69, 255);
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
 }
- div.connect-four {
-    div.indicator{
-        position: fixed;
-        bottom:0;
-        width: 0;
-        height: 30%;
-        border-top-right-radius: 50px;
-        border-top-left-radius: 50px;
-        width:100%;
-        background-color: $dark_purple;
-        z-index: 1;
+
+body,
+html {
+  font-size: 16px;
+  font-family: "Space Grotesk", sans-serif;
+}
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+div.connect-four {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: $light_purple;
+  div.indicator {
+    position: fixed;
+    bottom: 0;
+    width: 0;
+    height: 30%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    width: 100%;
+    background-color: $dark_purple;
+    z-index: 1;
+  }
+  div.container {
+    nav.navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 1em;
+      margin-bottom: 1em;
+      a,
+      button {
+        display: inline-block;
+        padding: 1em 1.5em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+        background: rgb(92, 45, 213);
+        border-radius: 16px;
+        color: #fff;
+        font-size: 0.8em;
+        cursor: pointer;
+      }
     }
-    div.container {
-        nav.navigation {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-           
-            padding: 1em;
-            margin-bottom: 1em;
-            a, button {
-                display: inline-block;
-                padding: 1em 1.5em;
-                text-transform: uppercase;
-                text-decoration: none;
-                font-weight: bold;
-                background: rgb(92,45,213);
-                border-radius: 16px;
-                color: #fff;
-                font-size: .8em;
-                cursor: pointer;
-            }
-        }
-    
-        div.game-screen {
-            main.main-content {
-                div.game {
-                    display: grid;
-                    grid-template-areas: 
-                    "player . opponent"
-                    "board board board";
-                    gap: 30px;
-                    div.player-content {
-                        height: 150px;
-                        width: 120px;
-                        background: #fff;
-                        position: relative;
-                        border-radius: 8px;
-                        div.player-icon {
-                            width: 50px;
-                            position: absolute;
-                            top: -28px;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            display: flex;
-                            flex-direction: column;
-                            align-content: center;
-                            justify-content: center;
-                            justify-content: center; 
-                            p {
-                                text-transform: uppercase;
-                            }
-                        }
-                        &.player {
-                            grid-area: player;
-                        }
-                        &.opponent {
-                            grid-area: opponent;
-                        }
-                    }
-    
-                    div.board {
-                        grid-area: board;
-                        z-index:3;
-                        position: relative;
 
-                        div.board-back {
-                            button.button {
-                                position: relative;
-
-                                &:hover {
-                                    span.marker {
-                                        transform: translateX(-50%) scale(1);
-                                        transition: transform .3s;
-                                    }
-                                }
-                                span.marker {
-                                    display: block;
-                                    position: absolute;
-                                    width:38px;
-                                    height: 15px;
-                                    top: -30px;
-                                    left:50%;
-                                    transform: translateX(-50%) scale(0);
-                                    transition: transform .5s;
-                                }
-                            }
-                        }
-                        div.game-status{
-                            height: 100px;
-                            width: 130px;
-                            z-index: 10;
-                            position: absolute;
-                            bottom: -80px;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            display: flex;
-                            align-items:center;
-                            justify-content: center;
-                            flex-direction: column; 
-                            background: #fff;
-                            box-shadow: 0 10px  25px rgba(0,0,0,.8);
-                            h2 {
-                                margin: .3em 0;
-                            }
-                            border-radius: 8px;
-                            button.btn {
-                                background: $dark_purple;
-                                color: #fff;
-                                border-radius: 15px;
-                                padding: .4em 1em;
-                                cursor: pointer;
-                            }
-                            b {
-                                text-transform: uppercase;
-                                font-size: .8em;
-                            }
-                            &.player-1 {
-                                background: url(../assets/turn-background-red.svg) no-repeat;
-                                background-position: center;
-                            background-size: contain;
-                            box-shadow: none;
-                            }
-
-                            &.player-2 {
-                                background: url(../assets/turn-background-yellow.svg) no-repeat;
-                                background-position: center;
-                            background-size: contain;
-                            box-shadow: none;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-    }
- }
-
- div.connect-four {
-    min-height: 100vh;
-    min-width: 100vw;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-
-    background: $light_purple;
     div.game-screen {
-        div.board {
-            width: 632px;
-            height: 584px;
+      main.main-content {
+        div.game {
+          display: grid;
+          grid-template-areas:
+            "player . opponent"
+            "board board board";
+          gap: 30px;
+          align-items: center;
+          justify-content: center;
+          div.player-content {
+            height: 120px;
+            width: 120px;
+            background: #fff;
             position: relative;
+            border-radius: 8px;
+            div.player-icon {
+              width: 50px;
+              position: absolute;
+              top: -28px;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              flex-direction: column;
+              align-content: center;
+              justify-content: center;
+              justify-content: center;
+              p {
+                text-transform: uppercase;
+              }
+            }
+            &.player {
+              grid-area: player;
+            }
+            &.opponent {
+              grid-area: opponent;
+            }
+          }
 
+          div.board {
+            grid-area: board;
+            z-index: 3;
+            position: relative;
+            width: 335px;
+            height: 310px;
             div.board-back {
-                background:url(../assets/board-layer-white-large.svg) ,url(../assets/board-layer-black-large.svg)  no-repeat;
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                z-index: 2;
-                display: grid;
-                grid-template-columns: repeat(7, 1fr);
-                button.button {
-                    background: transparent;
+              background: url(../assets/board-layer-white-small.svg),
+                url(../assets/board-layer-black-small.svg) no-repeat;
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              z-index: 2;
+              display: grid;
+              grid-template-columns: repeat(7, 1fr);
+
+              button.button {
+                position: relative;
+                background: transparent;
+                &:hover {
+                  span.marker {
+                    transform: translateX(-50%) scale(1);
+                    transition: transform 0.3s;
+                  }
                 }
+                span.marker {
+                  display: block;
+                  position: absolute;
+                  width: 38px;
+                  height: 15px;
+                  top: -30px;
+                  left: 50%;
+                  transform: translateX(-50%) scale(0);
+                  transition: transform 0.5s;
+                }
+              }
             }
+
             div.board-top {
+              display: grid;
+              grid-template-columns: repeat(7, 1fr);
+              height: 100%;
+              position: absolute;
+              padding: 0 7px;
+              padding-bottom: 49px;
+              padding-top: 10px;
+              top: 0;
+              left: 0;
+              width: 100%;
+              div.board-row {
                 display: grid;
-                grid-template-columns: repeat(7, 1fr);
-                height: 100%;
-                position: absolute;
-                padding: 0 7px;
-                padding-bottom: 49px;
-                padding-top: 10px;
-                top: 0;
-                left: 0;
-                width: 100%;
-                div.board-row {
-                    display: grid;
+                position: relative;
+                // background: rgba(0,0,0,.5);
+                grid-template-areas:
+                  "item-6"
+                  "item-5"
+                  "item-4"
+                  "item-3"
+                  "item-2"
+                  "item-1";
+                justify-content: center;
+                align-items: stretch;
+                align-content: space-between;
+                // z-index: 10;
+                padding: 5px 0;
+                div.disc {
+                  height: 33.95px;
+                  width: 33.95px;
+                  border-radius: 60px;
+
+                  div.seed {
+                    transform: translateY(-1000px);
                     position: relative;
-                    // background: rgba(0,0,0,.5);
-                    grid-template-areas: 
-                    "item-6"
-                    "item-5"
-                    "item-4"
-                    "item-3"
-                    "item-2"
-                    "item-1";
-                    justify-content: center;
-                    align-items: stretch;
-                    align-content: space-between;
-                    // z-index: 10;
-                    padding:5px 0;
-                    div.disc {
-                        height: 75px;
-                        width: 70px;
-                        border-radius: 60px;
-                        
-                        div.seed {
-                            transform: translateY(-1000px);
-                            position: relative;
-                            animation-name: slidein;
-                            animation-delay: .5s;
-                            animation-duration: 1s;
-                            animation-fill-mode: forwards;
-                        }
+                    animation-name: slidein;
+                    animation-delay: 0.5s;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                  }
 
-                        &.item-1 {
-                            grid-area: item-1;
-                        }
+                  &.item-1 {
+                    grid-area: item-1;
+                  }
 
-                        &.item-2 {
-                            grid-area: item-2;
-                        }
+                  &.item-2 {
+                    grid-area: item-2;
+                  }
 
-                        &.item-3 {
-                            grid-area:item-3;
-                        }
+                  &.item-3 {
+                    grid-area: item-3;
+                  }
 
-                        &.item-4 {
-                            grid-area:item-4;
-                        }
-                        &.item-5 {
-                            grid-area:item-5;
-                        }
-                        &.item-6 {
-                            grid-area:item-6;
-                        }
-                    }
-                    &:hover {
-                        background: rgba(0,0,0,.4);
-                    }
+                  &.item-4 {
+                    grid-area: item-4;
+                  }
+                  &.item-5 {
+                    grid-area: item-5;
+                  }
+                  &.item-6 {
+                    grid-area: item-6;
+                  }
                 }
+                &:hover {
+                  background: rgba(0, 0, 0, 0.4);
+                }
+              }
             }
+            div.game-status {
+              height: 100px;
+              width: 130px;
+              z-index: 10;
+              position: absolute;
+              bottom: -80px;
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              background: #fff;
+              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+              h2 {
+                margin: 0.3em 0;
+              }
+              border-radius: 8px;
+              button.btn {
+                background: $dark_purple;
+                color: #fff;
+                border-radius: 15px;
+                padding: 0.4em 1em;
+                cursor: pointer;
+              }
+              b {
+                text-transform: uppercase;
+                font-size: 0.8em;
+              }
+              &.player-1 {
+                background: url(../assets/turn-background-red.svg) no-repeat;
+                background-position: center;
+                background-size: contain;
+                box-shadow: none;
+              }
+
+              &.player-2 {
+                background: url(../assets/turn-background-yellow.svg) no-repeat;
+                background-position: center;
+                background-size: contain;
+                box-shadow: none;
+              }
+            }
+          }
         }
+      }
     }
- }
+  }
+}
 
- @keyframes slidein {
-    0% {
-        transform: translateY(-1000px);
-    }
-    100% {
-        transform: translateY(0);
-    }
- }
+//  div.connect-four {
+//     min-height: 100vh;
+//     min-width: 100vw;
+//     // display: flex;
+//     // align-items: center;
+//     // justify-content: center;
 
- @media screen and (min-width: 1110px) {
-    div.connect-four {
-        div.container {
-            width: 1000px;
-            margin: 0 auto;
-            nav.navigation {
-                display: flex;
-                width: 632px;
-                margin: 0 auto;
-                
-                align-items: center;
-                justify-content: space-between;
-        
-                a, button {
-                    display: inline-block;
-                    padding: 1em 1.5em;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    font-weight: bold;
-                    background: rgb(92,45,213);
-                    border-radius: 16px;
-                    color: #fff;
-                    font-size: .8em;
-                    cursor: pointer;
-                }
-            }
-        
-            div.game-screen {
-                main.main-content {
-                    div.game {
-                        display: grid;
-                        grid-template-areas: 
-                        "player board opponent";
-                        gap: 30px;
-                        div.player-content {
-                            height: 140px;
-                            width: 120px;
-                            background: #fff;
-                            align-self: center;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            flex-direction: column;
-                            b {
-                                margin-bottom:2px;
-                                text-transform: uppercase;
-                            }
-                            h1{
-                                font-size: 42px;
-                            }
-                            &.player {
-                                grid-area: player;
-                            }
-                            &.opponent {
-                                grid-area: opponent;
-                            }
-                        }
-        
-                        div.board {
-                            grid-area: board;
-                        }
-                    }
-                }
-            }
+//     background: $light_purple;
+//     div.game-screen {
+//         div.board {
+//             width: 632px;
+//             height: 584px;
+//             position: relative;
 
+//             div.board-back {
+//                 background:url(../assets/board-layer-whit.svg) ,url(../assets/board-layer-black-large.svg)  no-repeat;
+//                 height: 100%;
+//                 width: 100%;
+//                 position: absolute;
+//                 top: 0;
+//                 z-index: 2;
+//                 display: grid;
+//                 grid-template-columns: repeat(7, 1fr);
+//                 button.button {
+//                     background: transparent;
+//                 }
+//             }
+//             div.board-top {
+//                 display: grid;
+//                 grid-template-columns: repeat(7, 1fr);
+//                 height: 100%;
+//                 position: absolute;
+//                 padding: 0 7px;
+//                 padding-bottom: 49px;
+//                 padding-top: 10px;
+//                 top: 0;
+//                 left: 0;
+//                 width: 100%;
+//                 div.board-row {
+//                     display: grid;
+//                     position: relative;
+//                     // background: rgba(0,0,0,.5);
+//                     grid-template-areas:
+//                     "item-6"
+//                     "item-5"
+//                     "item-4"
+//                     "item-3"
+//                     "item-2"
+//                     "item-1";
+//                     justify-content: center;
+//                     align-items: stretch;
+//                     align-content: space-between;
+//                     // z-index: 10;
+//                     padding:5px 0;
+//                     div.disc {
+//                         height: 75px;
+//                         width: 70px;
+//                         border-radius: 60px;
+
+//                         div.seed {
+//                             transform: translateY(-1000px);
+//                             position: relative;
+//                             animation-name: slidein;
+//                             animation-delay: .5s;
+//                             animation-duration: 1s;
+//                             animation-fill-mode: forwards;
+//                         }
+
+//                         &.item-1 {
+//                             grid-area: item-1;
+//                         }
+
+//                         &.item-2 {
+//                             grid-area: item-2;
+//                         }
+
+//                         &.item-3 {
+//                             grid-area:item-3;
+//                         }
+
+//                         &.item-4 {
+//                             grid-area:item-4;
+//                         }
+//                         &.item-5 {
+//                             grid-area:item-5;
+//                         }
+//                         &.item-6 {
+//                             grid-area:item-6;
+//                         }
+//                     }
+//                     &:hover {
+//                         background: rgba(0,0,0,.4);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//  }
+
+@keyframes slidein {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  div.connect-four {
+    div.container {
+      width: 1000px;
+      margin: 0 auto;
+      nav.navigation {
+        display: flex;
+        width: 632px;
+        margin: 0 auto;
+
+        align-items: center;
+        justify-content: space-between;
+
+        a,
+        button {
+          display: inline-block;
+          padding: 1em 1.5em;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: bold;
+          background: rgb(92, 45, 213);
+          border-radius: 16px;
+          color: #fff;
+          font-size: 0.8em;
+          cursor: pointer;
         }
-     }
+      }
+
+      div.game-screen {
+        main.main-content {
+          div.game {
+            display: grid;
+            grid-template-areas: "player board opponent";
+            gap: 30px;
+            div.player-content {
+              height: 140px;
+              width: 120px;
+              background: #fff;
+              align-self: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              b {
+                margin-bottom: 2px;
+                text-transform: uppercase;
+              }
+              h1 {
+                font-size: 42px;
+              }
+              &.player {
+                grid-area: player;
+              }
+              &.opponent {
+                grid-area: opponent;
+              }
+            }
+
+            div.board {
+              grid-area: board;
+            }
+          }
+        }
+      }
     }
- 
+  }
+}
