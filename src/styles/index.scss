@@ -9,6 +9,20 @@ $light_purple: rgb(121, 69, 255);
   font-family: "Space Grotesk", sans-serif;
 }
 
+button {
+  &:active {
+    background: none;
+  }
+
+  &:focus {
+    background: none;
+  }
+
+  &:hover {
+    background: none;
+  }
+}
+
 body,
 html {
   font-size: 16px;
@@ -16,7 +30,7 @@ html {
 }
 svg {
   max-width: 100%;
-  max-height: 100%;
+  // max-height: 100%;
 }
 div.connect-four {
   min-height: 100vh;
@@ -26,7 +40,7 @@ div.connect-four {
     position: fixed;
     bottom: 0;
     width: 0;
-    height: 30%;
+    height: 40%;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     width: 100%;
@@ -66,14 +80,26 @@ div.connect-four {
           gap: 30px;
           align-items: center;
           justify-content: center;
+
           div.player-content {
             height: 120px;
             width: 120px;
             background: #fff;
             position: relative;
             border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            b {
+              margin-bottom: 2px;
+              text-transform: uppercase;
+            }
+            h1 {
+              font-size: 42px;
+            }
             div.player-icon {
-              width: 50px;
+              width: 30px;
               position: absolute;
               top: -28px;
               left: 50%;
@@ -140,8 +166,6 @@ div.connect-four {
               height: 100%;
               position: absolute;
               padding: 0 7px;
-              padding-bottom: 49px;
-              padding-top: 10px;
               top: 0;
               left: 0;
               width: 100%;
@@ -160,10 +184,11 @@ div.connect-four {
                 align-items: stretch;
                 align-content: space-between;
                 // z-index: 10;
-                padding: 5px 0;
+                // padding: 5px 0;
+                padding-bottom: 32px;
                 div.disc {
                   height: 33.95px;
-                  width: 33.95px;
+                  width: 100%;
                   border-radius: 60px;
 
                   div.seed {
@@ -173,6 +198,10 @@ div.connect-four {
                     animation-delay: 0.5s;
                     animation-duration: 1s;
                     animation-fill-mode: forwards;
+                    svg.seed {
+                      height: inherit;
+                      width: inherit;
+                    }
                   }
 
                   &.item-1 {
@@ -216,9 +245,11 @@ div.connect-four {
               flex-direction: column;
               background: #fff;
               box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+
               h2 {
                 margin: 0.3em 0;
               }
+
               border-radius: 8px;
               button.btn {
                 background: $dark_purple;
@@ -230,6 +261,7 @@ div.connect-four {
               b {
                 text-transform: uppercase;
                 font-size: 0.8em;
+                font-size: 0.7em;
               }
               &.player-1 {
                 background: url(../assets/turn-background-red.svg) no-repeat;
@@ -420,6 +452,26 @@ div.connect-four {
 
             div.board {
               grid-area: board;
+
+              width: 632px;
+              height: 582px;
+              div.board-top {
+                padding-bottom: 22px;
+
+                div.board-row {
+                  // padding-bottom: 50px;
+                  padding-top: 15px;
+                  div.disc {
+                    height: 75px;
+                    width: 70px;
+                    border-radius: 60px;
+                  }
+                }
+              }
+              div.board-back {
+                background: url(../assets/board-layer-white-large.svg),
+                  url(../assets/board-layer-black-large.svg) no-repeat;
+              }
             }
           }
         }

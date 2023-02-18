@@ -8,6 +8,18 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
+button:active {
+  background: none;
+}
+
+button:focus {
+  background: none;
+}
+
+button:hover {
+  background: none;
+}
+
 body,
 html {
   font-size: 16px;
@@ -16,7 +28,6 @@ html {
 
 svg {
   max-width: 100%;
-  max-height: 100%;
 }
 
 div.connect-four {
@@ -29,7 +40,7 @@ div.connect-four div.indicator {
   position: fixed;
   bottom: 0;
   width: 0;
-  height: 30%;
+  height: 40%;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   width: 100%;
@@ -84,10 +95,32 @@ div.connect-four div.container div.game-screen main.main-content div.game div.pl
   background: #fff;
   position: relative;
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content b {
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.player-content h1 {
+  font-size: 42px;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon {
-  width: 50px;
+  width: 30px;
   position: absolute;
   top: -28px;
   left: 50%;
@@ -185,8 +218,6 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   height: 100%;
   position: absolute;
   padding: 0 7px;
-  padding-bottom: 49px;
-  padding-top: 10px;
   top: 0;
   left: 0;
   width: 100%;
@@ -205,12 +236,12 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
           align-items: stretch;
   -ms-flex-line-pack: justify;
       align-content: space-between;
-  padding: 5px 0;
+  padding-bottom: 32px;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row div.disc {
   height: 33.95px;
-  width: 33.95px;
+  width: 100%;
   border-radius: 60px;
 }
 
@@ -226,6 +257,11 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row div.disc div.seed svg.seed {
+  height: inherit;
+  width: inherit;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row div.disc.item-1 {
@@ -311,6 +347,7 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status b {
   text-transform: uppercase;
   font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.game-status.player-1 {
@@ -429,6 +466,22 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: board;
+    width: 632px;
+    height: 582px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top {
+    padding-bottom: 22px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row {
+    padding-top: 15px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row div.disc {
+    height: 75px;
+    width: 70px;
+    border-radius: 60px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back {
+    background: url(../assets/board-layer-white-large.svg), url(../assets/board-layer-black-large.svg) no-repeat;
   }
 }
 /*# sourceMappingURL=index.css.map */
