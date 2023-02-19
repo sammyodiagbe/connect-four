@@ -28,21 +28,23 @@ const GameScreen = () => {
 
   useEffect(() => {
     if (gameEnded) return;
-    const id = setInterval(() => {
-      if (timer <= 0) {
-        // switch the user
-        if (playerTurn === 1) {
-          setPlayerTurn(2);
-        } else {
-          setPlayerTurn(1);
+    if (!showMenu) {
+      const id = setInterval(() => {
+        if (timer <= 0) {
+          // switch the user
+          if (playerTurn === 1) {
+            setPlayerTurn(2);
+          } else {
+            setPlayerTurn(1);
+          }
+          setTimer(15);
+          return;
         }
-        setTimer(15);
-        return;
-      }
-      setTimer(timer - 1);
-    }, 1000);
-    return () => clearInterval(id);
-  }, [timer]);
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(id);
+    }
+  }, [timer, showMenu]);
 
   const playToColumn = (event) => {
     let { x } = event.target.dataset;
