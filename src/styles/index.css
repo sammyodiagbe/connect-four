@@ -41,6 +41,7 @@ div.connect-four div.indicator {
   bottom: 0;
   width: 0;
   height: 40%;
+  left: 0;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
   width: 100%;
@@ -196,6 +197,11 @@ div.connect-four div.container nav.navigation button {
   cursor: pointer;
 }
 
+div.connect-four div.container div.game-screen {
+  position: relative;
+  z-index: 30;
+}
+
 div.connect-four div.container div.game-screen main.main-content div.game {
   display: -ms-grid;
   display: grid;
@@ -286,6 +292,7 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   position: relative;
   width: 335px;
   height: 310px;
+  z-index: 34;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back {
@@ -499,7 +506,7 @@ div.connect-four div.game-menu {
       -ms-flex-pack: center;
           justify-content: center;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 10;
+  z-index: 10000;
   position: fixed;
   top: 0;
   left: 0;
