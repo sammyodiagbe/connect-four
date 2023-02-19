@@ -20,7 +20,6 @@ const GameDataProvider = ({ children }) => {
 
   const play = (x) => {
     // let;
-    console.log(gameEnded);
     if (gameEnded) return;
     const newBoard = [...gameBoard];
     if (newBoard[0][x] !== 0) return;
@@ -31,11 +30,22 @@ const GameDataProvider = ({ children }) => {
 
         setGameBoard(newBoard);
         const checkwin = setGameHasEnded(checkWinner(y, x));
+        console.log(checkwin);
         if (!checkwin) {
           if (playerTurn == 1) {
             setPlayerTurn(2);
           } else {
             setPlayerTurn(1);
+          }
+        } else {
+          if (playerTurn == 1) {
+            console.log("player 1 won");
+            setPlayerOnePoint(playerOnePoint + 1);
+          }
+
+          if (playerTurn == 2) {
+            console.log("Player 2 won");
+            setPlayerTwoPoint(playerTwoPoint + 1);
           }
         }
         return;
@@ -140,6 +150,7 @@ const GameDataProvider = ({ children }) => {
     setPlayerTurn(1);
     setPlayerOnePoint(0);
     setPlayerTwoPoint(0);
+    setGameHasEnded(false);
   };
 
   const validValue = (y, x) => {
