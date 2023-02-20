@@ -47,6 +47,16 @@ div.connect-four div.indicator {
   width: 100%;
   background-color: #5c2dd5;
   z-index: 1;
+  -webkit-transition: all 0.2s 0.5s;
+  transition: all 0.2s 0.5s;
+}
+
+div.connect-four div.indicator.p1-wins {
+  background-color: #fd6687;
+}
+
+div.connect-four div.indicator.p2-wins {
+  background-color: #ffce67;
 }
 
 div.connect-four div.container {

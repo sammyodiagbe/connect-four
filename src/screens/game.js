@@ -298,7 +298,11 @@ const GameScreen = () => {
           </div>
         </main>
       </div>
-      <div className="indicator"></div>
+      <div
+        className={`indicator ${
+          roundWinner ? (roundWinner == 1 ? "p1-wins" : "p2-wins") : ""
+        }`}
+      ></div>
       {showMenu && (
         <div className="game-menu">
           <div className="menu">

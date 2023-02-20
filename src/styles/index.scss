@@ -49,6 +49,14 @@ div.connect-four {
     width: 100%;
     background-color: $dark_purple;
     z-index: 1;
+    transition: all 0.2s 0.5s;
+    &.p1-wins {
+      background-color: $pink;
+    }
+
+    &.p2-wins {
+      background-color: $yellow;
+    }
   }
   div.container {
     min-height: 100vh;
