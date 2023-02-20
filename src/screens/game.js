@@ -19,8 +19,9 @@ const GameScreen = () => {
     playerOnePoint,
     playerTwoPoint,
     setPlayerTurn,
-    gameEnded,
     resetGame,
+    playAgain,
+    gameEnded,
   } = dataContext;
   // const numberOfRows = 7;
 
@@ -44,7 +45,7 @@ const GameScreen = () => {
       }, 1000);
       return () => clearInterval(id);
     }
-  }, [timer, showMenu]);
+  }, [timer, showMenu, gameEnded]);
 
   const playToColumn = (event) => {
     let { x } = event.target.dataset;
@@ -276,7 +277,9 @@ const GameScreen = () => {
                   <>
                     <b>Player {playerTurn}</b>
                     <h2>WINS</h2>
-                    <button className="btn">Play again</button>
+                    <button className="btn" onClick={playAgain}>
+                      Play again
+                    </button>
                   </>
                 ) : (
                   <>
