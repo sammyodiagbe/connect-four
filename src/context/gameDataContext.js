@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const gameContext = createContext();
 
@@ -16,10 +16,24 @@ const GameDataProvider = ({ children }) => {
   const [timer, setTimer] = useState(15);
   const [playerOnePoint, setPlayerOnePoint] = useState(0);
   const [playerTwoPoint, setPlayerTwoPoint] = useState(0);
-  let gameTimerInterval;
+
+  const [lastPlayer, setLastPlayer] = useState(1);
+
+  useEffect(() => {
+    if (gameEnded) {
+      if (playerTurn == 1) {
+        setPlayerOnePoint(playerOnePoint + 1);
+        setPlayerTurn(1);
+      } else {
+        setPlayerTwoPoint(playerTwoPoint + 1);
+        setPlayerTurn(2);
+      }
+    }
+  }, [gameEnded]);
 
   const play = (x) => {
     // let;
+    console.log("game ended: ", gameEnded);
     if (gameEnded) return;
     const newBoard = [...gameBoard];
     if (newBoard[0][x] !== 0) return;
@@ -30,8 +44,8 @@ const GameDataProvider = ({ children }) => {
 
         setGameBoard(newBoard);
         const checkwin = setGameHasEnded(checkWinner(y, x));
-        console.log(checkwin);
-        if (!checkwin) {
+        console.log(typeof checkwin);
+        if (!gameEnded) {
           if (playerTurn == 1) {
             setPlayerTurn(2);
           } else {
@@ -39,12 +53,10 @@ const GameDataProvider = ({ children }) => {
           }
         } else {
           if (playerTurn == 1) {
-            console.log("player 1 won");
             setPlayerOnePoint(playerOnePoint + 1);
           }
 
           if (playerTurn == 2) {
-            console.log("Player 2 won");
             setPlayerTwoPoint(playerTwoPoint + 1);
           }
         }
@@ -105,6 +117,7 @@ const GameDataProvider = ({ children }) => {
 
     const checkValue = (y, x, arr) => {
       const value = gameBoard[y][x];
+      console.log(value);
       const won = arr.every((a) => a == value);
       return won;
     };
@@ -122,21 +135,6 @@ const GameDataProvider = ({ children }) => {
     return win;
   };
 
-  const startGameTimer = () => {
-    gameTimerInterval = setInterval(() => {
-      setTimer(timer - 1);
-      console.log("hello world", timer);
-    }, 1000);
-  };
-  // console.log(timer);
-  // if (timer <= 0) {
-  //   // clear the interval
-  //   clearInterval(gameTimerInterval);
-  //   gameTimerInterval = null;
-  //   console.log("timer has ended");
-  // }
-  // startGameTimer();
-
   const resetGame = () => {
     const newboard = [
       [0, 0, 0, 0, 0, 0, 0],
@@ -151,6 +149,11 @@ const GameDataProvider = ({ children }) => {
     setPlayerOnePoint(0);
     setPlayerTwoPoint(0);
     setGameHasEnded(false);
+  };
+
+  const playAgain = () => {
+    setLastPlayer(lastPlayer === 1 ? 2 : lastPlayer);
+    resetGame();
   };
 
   const validValue = (y, x) => {
@@ -180,9 +183,9 @@ const GameDataProvider = ({ children }) => {
         timer,
         playerOnePoint,
         playerTwoPoint,
-        startGameTimer,
         gameEnded,
         resetGame,
+        playAgain,
       }}
     >
       {children}
