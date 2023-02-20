@@ -157,8 +157,13 @@ div.connect-four div.container main.main-menu div.content a {
 }
 
 div.connect-four div.container main.main-menu div.content a.play-button {
+  padding: 0.2em 1em;
   background: #ffce67;
   margin-top: 50px;
+}
+
+div.connect-four div.container main.main-menu div.content a.g-rule {
+  padding: 1em;
 }
 
 div.connect-four div.container main.main-menu div.content a span.icon {

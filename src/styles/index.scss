@@ -118,8 +118,13 @@ div.connect-four {
           margin: 10px 0;
           border-radius: 30px;
           &.play-button {
+            padding: 0.2em 1em;
             background: $yellow;
             margin-top: 50px;
+          }
+
+          &.g-rule {
+            padding: 1em;
           }
           span.icon {
             width: 50px;
