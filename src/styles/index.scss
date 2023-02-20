@@ -160,6 +160,7 @@ div.connect-four {
       position: relative;
       z-index: 30;
       main.main-content {
+        margin-top: 2em;
         div.game {
           display: grid;
           grid-template-areas:
@@ -216,6 +217,7 @@ div.connect-four {
             width: 335px;
             height: 310px;
             z-index: 34;
+            margin-top: 2em;
             div.board-back {
               background: url(../assets/board-layer-white-small.svg),
                 url(../assets/board-layer-black-small.svg) no-repeat;
@@ -522,6 +524,81 @@ div.connect-four {
   }
 }
 
+@media screen and (min-width: 768px) {
+  div.connect-four {
+    div.container {
+      padding: 0 2em;
+      nav.navigation {
+        padding: 1em 0;
+      }
+      div.game-screen {
+        main.main-content {
+          div.game {
+            div.player-content {
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+              height: auto;
+              padding: 1em 2em;
+
+              div.player-icon {
+                width: 50px;
+              }
+              &.player {
+                div.player-icon {
+                  left: -25px;
+                  top: 50%;
+                  transform: translate(0, -50%);
+                }
+              }
+              &.opponent {
+                div.player-icon {
+                  position: absolute;
+                  background: red;
+                  top: 50%;
+                  right: 10px;
+                  transform: translate(0, -50%);
+                }
+              }
+              h1 {
+                font-size: 52px;
+              }
+              b {
+                font-size: 26px;
+              }
+              width: auto;
+              width: 250px;
+            }
+
+            div.board {
+              width: 632px;
+              height: 582px;
+              div.board-top {
+                padding-bottom: 22px;
+
+                div.board-row {
+                  // padding-bottom: 50px;
+                  padding-top: 15px;
+                  div.disc {
+                    height: 75px;
+                    width: 70px;
+                    border-radius: 60px;
+                  }
+                }
+              }
+
+              div.board-back {
+                background: url(../assets/board-layer-white-large.svg),
+                  url(../assets/board-layer-black-large.svg) no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1110px) {
   div.connect-four {
     div.container {
@@ -582,7 +659,7 @@ div.connect-four {
 
             div.board {
               grid-area: board;
-
+              margin-top: 0;
               width: 632px;
               height: 582px;
               div.board-top {

@@ -202,6 +202,10 @@ div.connect-four div.container div.game-screen {
   z-index: 30;
 }
 
+div.connect-four div.container div.game-screen main.main-content {
+  margin-top: 2em;
+}
+
 div.connect-four div.container div.game-screen main.main-content div.game {
   display: -ms-grid;
   display: grid;
@@ -293,6 +297,7 @@ div.connect-four div.container div.game-screen main.main-content div.game div.bo
   width: 335px;
   height: 310px;
   z-index: 34;
+  margin-top: 2em;
 }
 
 div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back {
@@ -574,6 +579,72 @@ div.connect-four div.game-menu div.menu h1 {
   }
 }
 
+@media screen and (min-width: 768px) {
+  div.connect-four div.container {
+    padding: 0 2em;
+  }
+  div.connect-four div.container nav.navigation {
+    padding: 1em 0;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: auto;
+    padding: 1em 2em;
+    width: auto;
+    width: 250px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon {
+    width: 50px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content.player div.player-icon {
+    left: -25px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content.opponent div.player-icon {
+    position: absolute;
+    background: red;
+    top: 50%;
+    right: 10px;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content h1 {
+    font-size: 52px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content b {
+    font-size: 26px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board {
+    width: 632px;
+    height: 582px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top {
+    padding-bottom: 22px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row {
+    padding-top: 15px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-top div.board-row div.disc {
+    height: 75px;
+    width: 70px;
+    border-radius: 60px;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.board div.board-back {
+    background: url(../assets/board-layer-white-large.svg), url(../assets/board-layer-black-large.svg) no-repeat;
+  }
+}
+
 @media screen and (min-width: 1110px) {
   div.connect-four div.container {
     width: 1000px;
@@ -652,6 +723,7 @@ div.connect-four div.game-menu div.menu h1 {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: board;
+    margin-top: 0;
     width: 632px;
     height: 582px;
   }
