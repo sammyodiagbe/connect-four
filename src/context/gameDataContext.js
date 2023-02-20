@@ -17,7 +17,6 @@ const GameDataProvider = ({ children }) => {
   const [playerOnePoint, setPlayerOnePoint] = useState(0);
   const [playerTwoPoint, setPlayerTwoPoint] = useState(0);
 
-  const [lastPlayer, setLastPlayer] = useState(1);
   const [roundWinner, setRoundWinner] = useState(null);
 
   useEffect(() => {
@@ -152,8 +151,6 @@ const GameDataProvider = ({ children }) => {
   };
 
   const playAgain = () => {
-    setLastPlayer(lastPlayer === 1 ? 2 : lastPlayer);
-    setPlayerTurn(lastPlayer);
     setGameHasEnded(false);
     resetBoard();
     setRoundWinner(null);
