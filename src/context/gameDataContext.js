@@ -18,22 +18,25 @@ const GameDataProvider = ({ children }) => {
   const [playerTwoPoint, setPlayerTwoPoint] = useState(0);
 
   const [lastPlayer, setLastPlayer] = useState(1);
+  const [roundWinner, setRoundWinner] = useState(null);
 
   useEffect(() => {
     if (gameEnded) {
+      console.log("game has ended");
+      console.log(playerTurn);
+      setRoundWinner(playerTurn);
+      console.log(roundWinner);
       if (playerTurn == 1) {
         setPlayerOnePoint(playerOnePoint + 1);
-        setPlayerTurn(1);
+        setPlayerTurn(2);
       } else {
         setPlayerTwoPoint(playerTwoPoint + 1);
-        setPlayerTurn(2);
+        setPlayerTurn(1);
       }
     }
   }, [gameEnded]);
 
   const play = (x) => {
-    // let;
-    console.log("game ended: ", gameEnded);
     if (gameEnded) return;
     const newBoard = [...gameBoard];
     if (newBoard[0][x] !== 0) return;
@@ -43,21 +46,14 @@ const GameDataProvider = ({ children }) => {
         newBoard[y][x] = playerTurn;
 
         setGameBoard(newBoard);
-        const checkwin = setGameHasEnded(checkWinner(y, x));
-        console.log(typeof checkwin);
-        if (!gameEnded) {
+        const checkwin = checkWinner(y, x);
+        if (checkwin) {
+          setGameHasEnded(checkwin);
+        } else {
           if (playerTurn == 1) {
             setPlayerTurn(2);
           } else {
             setPlayerTurn(1);
-          }
-        } else {
-          if (playerTurn == 1) {
-            setPlayerOnePoint(playerOnePoint + 1);
-          }
-
-          if (playerTurn == 2) {
-            setPlayerTwoPoint(playerTwoPoint + 1);
           }
         }
         return;
@@ -117,7 +113,6 @@ const GameDataProvider = ({ children }) => {
 
     const checkValue = (y, x, arr) => {
       const value = gameBoard[y][x];
-      console.log(value);
       const won = arr.every((a) => a == value);
       return won;
     };
@@ -136,6 +131,15 @@ const GameDataProvider = ({ children }) => {
   };
 
   const resetGame = () => {
+    resetBoard();
+    setPlayerTurn(1);
+    setPlayerOnePoint(0);
+    setPlayerTwoPoint(0);
+    setGameHasEnded(false);
+    setRoundWinner(null);
+  };
+
+  const resetBoard = () => {
     const newboard = [
       [0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0],
@@ -145,15 +149,14 @@ const GameDataProvider = ({ children }) => {
       [0, 0, 0, 0, 0, 0, 0],
     ];
     setGameBoard(newboard);
-    setPlayerTurn(1);
-    setPlayerOnePoint(0);
-    setPlayerTwoPoint(0);
-    setGameHasEnded(false);
   };
 
   const playAgain = () => {
     setLastPlayer(lastPlayer === 1 ? 2 : lastPlayer);
-    resetGame();
+    setPlayerTurn(lastPlayer);
+    setGameHasEnded(false);
+    resetBoard();
+    setRoundWinner(null);
   };
 
   const validValue = (y, x) => {
@@ -186,6 +189,7 @@ const GameDataProvider = ({ children }) => {
         gameEnded,
         resetGame,
         playAgain,
+        roundWinner,
       }}
     >
       {children}

@@ -22,6 +22,7 @@ const GameScreen = () => {
     resetGame,
     playAgain,
     gameEnded,
+    roundWinner,
   } = dataContext;
   // const numberOfRows = 7;
 
@@ -273,9 +274,9 @@ const GameScreen = () => {
                   !gameEnded ? (playerTurn === 1 ? "player-1" : "player-2") : ""
                 }`}
               >
-                {gameEnded ? (
+                {roundWinner ? (
                   <>
-                    <b>Player {playerTurn}</b>
+                    <b>Player {roundWinner}</b>
                     <h2>WINS</h2>
                     <button className="btn" onClick={playAgain}>
                       Play again
