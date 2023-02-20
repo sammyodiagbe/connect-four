@@ -584,6 +584,8 @@ div.connect-four div.game-menu div.menu h1 {
     padding: 0 2em;
   }
   div.connect-four div.container nav.navigation {
+    width: 632px;
+    margin: 0 auto;
     padding: 1em 0;
   }
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content {
@@ -614,8 +616,8 @@ div.connect-four div.game-menu div.menu h1 {
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content.opponent div.player-icon {
     top: 50%;
     left: calc(100% - 25px);
-    -webkit-transform: translate(0, -50%) !important;
-            transform: translate(0, -50%) !important;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content h1 {
     font-size: 52px;
@@ -699,20 +701,28 @@ div.connect-four div.game-menu div.menu h1 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 0;
   }
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content b {
     margin-bottom: 2px;
     text-transform: uppercase;
+    font-size: 18px;
   }
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content h1 {
     font-size: 42px;
   }
-  div.connect-four div.container div.game-screen main.main-content div.game div.player-content.player {
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon {
+    top: -30px !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, 0) !important;
+            transform: translate(-50%, 0) !important;
+  }
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon.player {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: player;
   }
-  div.connect-four div.container div.game-screen main.main-content div.game div.player-content.opponent {
+  div.connect-four div.container div.game-screen main.main-content div.game div.player-content div.player-icon.opponent {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: opponent;
