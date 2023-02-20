@@ -612,12 +612,10 @@ div.connect-four div.game-menu div.menu h1 {
             transform: translate(0, -50%);
   }
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content.opponent div.player-icon {
-    position: absolute;
-    background: red;
     top: 50%;
-    right: 10px;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    left: calc(100% - 25px);
+    -webkit-transform: translate(0, -50%) !important;
+            transform: translate(0, -50%) !important;
   }
   div.connect-four div.container div.game-screen main.main-content div.game div.player-content h1 {
     font-size: 52px;

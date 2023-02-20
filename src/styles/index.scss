@@ -553,11 +553,9 @@ div.connect-four {
               }
               &.opponent {
                 div.player-icon {
-                  position: absolute;
-                  background: red;
                   top: 50%;
-                  right: 10px;
-                  transform: translate(0, -50%);
+                  left: calc(100% - 25px);
+                  transform: translate(0, -50%) !important;
                 }
               }
               h1 {
